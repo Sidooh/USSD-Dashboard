@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import {AgGridVue} from "ag-grid-vue3";
 import "ag-grid-community/dist/styles/ag-grid.css"; // Core grid CSS, always needed
-import "ag-grid-community/dist/styles/ag-theme-material.css";
+import "ag-grid-community/dist/styles/ag-theme-material.css"; // Optional theme CSS
 import {PropType} from "vue";
-import {Column} from "ag-grid-community"; // Optional theme CSS
+
+interface Column {
+  field: string,
+  headerName: string
+}
 
 const props = defineProps({
   tableName: String,
