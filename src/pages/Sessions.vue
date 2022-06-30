@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import {useSessionsStore} from "../stores/sessions";
-import {computed, onMounted} from "vue";
+import {useSessionsStore} from "../stores/sessions"
+import {computed, onMounted} from "vue"
 
-const Grid = () => import("../components/core/grid.vue");
+import Grid from "../components/core/grid.vue"
 
 const store = useSessionsStore();
 
