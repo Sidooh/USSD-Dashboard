@@ -13,14 +13,14 @@
     <a class="navbar-brand me-1 me-sm-3" href="/">
       <div class="d-flex align-items-center">
         <img class="me-2" src="/logo.png" alt="" width="40">
-        <span class="font-sans-serif">A</span>
+        <span class="font-sans-serif">U</span>
       </div>
     </a>
     <ul class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center">
       <li class="nav-item dropdown"><a class="nav-link pe-0 ps-2" id="navbarDropdownUser" role="button"
                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="avatar avatar-xl">
-          <div class="avatar-name rounded-circle fs-2 bg-soft-primary text-primary"><span>A</span></div>
+          <div class="avatar-name rounded-circle fs-2 bg-soft-primary text-primary"><span>U</span></div>
         </div>
       </a>
         <div class="dropdown-menu dropdown-menu-end py-0" aria-labelledby="navbarDropdownUser">
