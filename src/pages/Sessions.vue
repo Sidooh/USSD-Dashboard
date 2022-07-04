@@ -3,8 +3,11 @@ import {useSessionsStore} from "../stores/sessions"
 import {computed, onMounted} from "vue"
 
 import Grid from "../components/core/grid.vue"
+import {useRouter} from "vue-router";
+import {RowClickedEvent} from "ag-grid-community";
 
-const store = useSessionsStore();
+const store = useSessionsStore()
+const router = useRouter()
 
 const sessions = computed(() => store.sessions)
 
@@ -52,6 +55,11 @@ const gridColumns = columns.value.map((c) => {
   }
 })
 
+const rowClickedEvent = ({data}: RowClickedEvent) => {
+  store.session = data
+  router.push(`/sessions/${data.id}`)
+}
+
 onMounted(() => store.fetchSessions())
 </script>
 
@@ -69,6 +77,7 @@ onMounted(() => store.fetchSessions())
       <Grid
           :columns="gridColumns"
           :rows="sessions"
+          @row-clicked="rowClickedEvent"
       />
     </div>
   </div>

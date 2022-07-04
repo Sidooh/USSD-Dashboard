@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import {AgGridVue} from "ag-grid-vue3";
-import "ag-grid-community/dist/styles/ag-grid.css"; // Core grid CSS, always needed
-import "ag-grid-community/dist/styles/ag-theme-material.css"; // Optional theme CSS
+import "ag-grid-community/dist/styles/ag-grid.min.css"; // Core grid CSS, always needed
+import "ag-grid-community/dist/styles/ag-theme-alpine.min.css"; // Optional theme CSS
 import {PropType} from "vue";
+import {RowClickedEvent} from "ag-grid-community";
 
 interface Column {
   field: string,
@@ -27,18 +28,23 @@ const defaultColDef = {
   filter: true,
 };
 
+const emit = defineEmits(['rowClicked'])
+const rowClicked = (e: RowClickedEvent) => {
+  emit('rowClicked', e)
+}
 </script>
 
 <template>
 
   <ag-grid-vue
-      class="ag-theme-material"
+      class="ag-theme-alpine"
       style="height: 500px"
       :columnDefs="columns"
       :rowData="rows"
       :defaultColDef="defaultColDef"
       rowSelection="multiple"
       animateRows="true"
+      @row-clicked="rowClicked"
   />
 
 </template>
