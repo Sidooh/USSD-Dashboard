@@ -106,7 +106,8 @@ onMounted(() => {
         <div class="card-body d-flex align-items-center">
           <div class="row h-100 justify-content-between g-0">
 
-            <span v-html="screen.formatted"></span>
+            <span v-if="screen" v-html="screen.formatted"></span>
+            <span v-else>No session found</span>
 
           </div>
         </div>
