@@ -29,7 +29,6 @@ export const useSessionsStore = defineStore("sessions", {
                 const data = await ussdClient.get('/sessions/logs')
                 this.sessions = data.data
             } catch (e) {
-                alert(e)
                 console.error(e)
             }
         },
