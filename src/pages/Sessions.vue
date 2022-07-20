@@ -36,14 +36,6 @@ const columns = computed(() => [
     name: 'status',
     title: 'Status'
   },
-  {
-    name: 'screen_path',
-    title: 'ScreenPath'
-  },
-  {
-    name: 'vars',
-    title: 'Vars'
-  },
 ])
 
 const gridColumns = columns.value.map((c) => {

@@ -38,7 +38,7 @@ const rowClicked = (e: RowClickedEvent) => {
 
   <ag-grid-vue
       class="ag-theme-alpine"
-      style="height: 500px"
+      style="min-height: 500px;max-height: calc(100vh - 250px);height: 800px"
       :columnDefs="columns"
       :rowData="rows"
       :defaultColDef="defaultColDef"
