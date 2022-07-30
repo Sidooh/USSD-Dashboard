@@ -19,10 +19,6 @@ const routes = [
     {path: '/sessions/:id', component: SessionDetails},
 
     {path: '/login', component: Login, meta: {layout: Auth, guest: true}, name: 'login'},
-
-    // Status check
-    {path: '/__vite_ping', component: StatusPage, meta: {layout: Auth, guest: true}, name: 'status.ping'},
-
 ]
 
 const router = createRouter({

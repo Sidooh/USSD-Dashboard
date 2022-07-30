@@ -6,7 +6,7 @@ import {useRoute} from "vue-router";
 
 const store = useSessionsStore();
 
-const session = computed(() => store.session)
+const session = computed((): Session => store.session)
 
 const sessionDetails = computed(() => {
   return {

@@ -1,21 +1,7 @@
 import {defineStore} from "pinia";
 import {ussdClient} from "../helpers/clients";
 
-type Session = {
-    id: string,
-    session_id: string,
-    phone: string,
-    text: string,
-    code?: string,
-    status: string,
-    product: number,
-    created_at: Date,
-    updated_at: Date,
-    screen_path: Object,
-    vars: Object
-}
-
-export const useSessionsStore = defineStore("sessions", {
+export const useSessionsStore = defineStore("session", {
     state: () => ({
         sessions: <Session[]>[],
         session: <Session>{}
