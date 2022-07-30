@@ -1,9 +1,10 @@
 import {defineStore} from "pinia";
 import {ussdClient} from "../helpers/clients";
 
-export const useSessionsStore = defineStore("sessions", {
+export const useSessionsStore = defineStore("session", {
     state: () => ({
-        sessions: <[]>[],
+        sessions: <Session[]>[],
+        session: <Session>{}
     }),
 
     actions: {
@@ -14,8 +15,17 @@ export const useSessionsStore = defineStore("sessions", {
                 const data = await ussdClient.get('/sessions/logs')
                 this.sessions = data.data
             } catch (e) {
-                alert(e)
                 console.error(e)
+            }
+        },
+
+        async setSessionFromId(id: string) {
+            if (this.sessions.length === 0) {
+                await this.fetchSessions()
+            }
+
+            if (Object.keys(this.session).length === 0 || this.session.id !== id) {
+                this.session = this.sessions.find((session: any) => session.id === id) || <Session>{}
             }
         }
     }

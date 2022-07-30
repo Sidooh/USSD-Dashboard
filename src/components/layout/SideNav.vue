@@ -59,7 +59,7 @@ const sideNavStyle = computed(() => store.navbarStyle !== 'transparent' ? `navba
               </div>
             </div>
 
-            <router-link class="nav-link" aria-expanded="false" to="sessions">
+            <router-link class="nav-link" aria-expanded="false" to="/sessions">
               <div class="d-flex align-items-center">
                 <span class="nav-link-icon">
                   <svg
@@ -74,7 +74,7 @@ const sideNavStyle = computed(() => store.navbarStyle !== 'transparent' ? `navba
               </div>
             </router-link>
 
-            <router-link class="nav-link" aria-expanded="false" to="login">
+            <router-link class="nav-link" aria-expanded="false" to="/login">
               <div class="d-flex align-items-center">
                 <span class="nav-link-icon">
                   <svg

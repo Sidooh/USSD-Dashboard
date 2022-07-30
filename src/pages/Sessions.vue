@@ -1,55 +1,47 @@
 <script setup lang="ts">
-import {useSessionsStore} from "../stores/sessions";
-import {computed, onMounted} from "vue";
-import Grid from "../components/core/grid.vue";
+import {useSessionsStore} from "../stores/sessions"
+import {computed, onMounted} from "vue"
+import {createColumnHelper} from "@tanstack/vue-table";
+import Table from "../components/core/table.vue";
+import router from "../routes";
 
-const store = useSessionsStore();
+const store = useSessionsStore()
 
-const sessions = computed(() => store.sessions)
+const sessions = computed((): Session[] => store.sessions)
 
-const columns = computed(() => [
-  {
-    name: 'id',
-    title: '#'
-  },
-  {
-    name: 'session_id',
-    title: 'SessionId'
-  },
-  {
-    name: 'code',
-    title: 'Code'
-  },
-  {
-    name: 'phone',
-    title: 'Phone'
-  },
-  {
-    name: 'product',
-    title: 'Product'
-  },
-  {
-    name: 'status',
-    title: 'Status'
-  },
-  {
-    name: 'screen_path',
-    title: 'ScreenPath'
-  },
-  {
-    name: 'vars',
-    title: 'Vars'
-  },
-])
+const columnHelper = createColumnHelper<Session>()
 
-const gridColumns = columns.value.map((c) => {
-  const {name: field, title: headerName} = c
+const columns = [
+  columnHelper.accessor(row => row.id, {
+    header: '#',
+    id: 'id'
+  }),
+  columnHelper.accessor(row => row.session_id, {
+    header: () => 'Session',
+    id: 'session_id'
+  }),
+  columnHelper.accessor(row => row.phone, {
+    header: () => 'Phone',
+    id: 'phone'
+  }),
+  columnHelper.accessor(row => row.product, {
+    header: () => 'Product',
+    id: 'product'
+  }),
+  columnHelper.accessor(row => row.status, {
+    header: () => 'Status',
+    id: 'status'
+  }),
+  columnHelper.accessor(row => row.code, {
+    header: () => 'Code',
+    id: 'code'
+  }),
+]
 
-  return {
-    field,
-    headerName
-  }
-})
+const rowClickedEvent = (session: Session) => {
+  store.session = session
+  router.push(`/sessions/${session.id}`)
+}
 
 onMounted(() => store.fetchSessions())
 </script>
@@ -58,16 +50,11 @@ onMounted(() => store.fetchSessions())
 
   <div class="card">
     <div class="card-body">
-      <!--      <Table-->
-      <!--          key="sessions"-->
-      <!--          table-name="Sessions"-->
-      <!--          :columns="columns"-->
-      <!--          :rows="sessions"-->
-      <!--      />-->
-
-      <Grid
-          :columns="gridColumns"
-          :rows="sessions"
+      <Table
+          title="Sessions"
+          :columns="columns"
+          :data="sessions"
+          @row-clicked="rowClickedEvent"
       />
     </div>
   </div>

@@ -4,6 +4,7 @@ import {useAuthStore} from "../stores/auth";
 
 const Home = () => import("../pages/Home.vue")
 const Sessions = () => import("../pages/Sessions.vue")
+const SessionDetails = () => import("../pages/SessionDetails.vue")
 
 const Login = () => import("../pages/Login.vue")
 const Auth = defineAsyncComponent(() => import("../components/layout/Auth.vue"))
@@ -15,12 +16,9 @@ const routes = [
 
     {path: '/', component: Home},
     {path: '/sessions', component: Sessions},
+    {path: '/sessions/:id', component: SessionDetails},
 
     {path: '/login', component: Login, meta: {layout: Auth, guest: true}, name: 'login'},
-
-    // Status check
-    {path: '/__vite_ping', component: StatusPage, meta: {layout: Auth, guest: true}, name: 'status.ping'},
-
 ]
 
 const router = createRouter({

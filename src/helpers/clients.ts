@@ -34,14 +34,14 @@ axios.interceptors.response.use(
     }
 )
 
-axios.defaults.baseURL = import.meta.env.VITE_ACCOUNTS_URL
+axios.defaults.baseURL = import.meta.env.VITE_ACCOUNTS_API_URL
 axios.defaults.headers.post['Content-Type'] = 'application/json'
 
 export const accountsClient = axios.create({
-    baseURL: import.meta.env.VITE_ACCOUNTS_URL,
+    baseURL: import.meta.env.VITE_ACCOUNTS_API_URL,
 })
 
 export const ussdClient = axios.create({
-    baseURL: import.meta.env.VITE_USSD_URL,
+    baseURL: import.meta.env.VITE_USSD_API_URL,
 })
 
