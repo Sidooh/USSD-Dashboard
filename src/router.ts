@@ -2,8 +2,6 @@ import { createRouter, createWebHistory } from "vue-router";
 import { defineAsyncComponent } from "vue";
 import { useAuthStore } from "./stores/auth";
 
-const Home = () => import("./pages/Home.vue")
-
 const Login = () => import("@/pages/auth/Login.vue")
 const Auth = defineAsyncComponent(() => import("@/layouts/Auth.vue"))
 
@@ -15,7 +13,7 @@ const router = createRouter({
     routes: [
         { path: '/login', component: Login, meta: { layout: Auth, guest: true }, name: 'login' },
 
-        { path: '/', component: Home },
+        { path: '/', component: () => import("./pages/dashboard/Index.vue") },
         {
             path: '/sessions', children: [
                 { path: '', name: 'sessions', component: () => import("./pages/sessions/Index.vue") },
