@@ -1,7 +1,7 @@
 <template>
     <div class="card overflow-hidden h-100">
         <div class="card-body d-flex flex-column justify-content-between"
-             style="height:300px; background-image: linear-gradient(-45deg, rgba(255, 255, 255, 1), rgba(245, 183, 0, 1))">
+             style="height:350px; background-image: linear-gradient(-45deg, rgba(255, 255, 255, 1), rgba(245, 183, 0, 1))">
 
             <Line :options="chartOptions" :data="chartData"/>
         </div>

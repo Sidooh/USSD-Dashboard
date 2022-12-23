@@ -14,7 +14,7 @@
                 </ComponentLoader>
 
                 <!--  Footer? -->
-                <Footer service-name="Accounts" :version="CONFIG.sidooh.version"/>
+                <Footer service-name="USSD" :version="CONFIG.sidooh.version"/>
             </div>
         </div>
     </main>
