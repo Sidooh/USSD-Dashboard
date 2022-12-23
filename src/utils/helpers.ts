@@ -39,3 +39,17 @@ export const getTelcoFromPhone = (phone: string | number) => {
         return null;
     }
 };
+
+export const groupBy = (array: any[], property: string) => {
+    let hash: any = {}, props = property.split('.');
+
+    for (let i = 0; i < array.length; i++) {
+        let key = props.reduce((acc, prop) => acc && acc[prop], array[i]);
+
+        if (!hash[key]) hash[key] = [];
+
+        hash[key].push(array[i]);
+    }
+
+    return hash;
+}
