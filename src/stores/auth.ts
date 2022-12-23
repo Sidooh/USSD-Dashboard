@@ -1,6 +1,6 @@
 import {defineStore} from "pinia";
 import axios from "axios";
-import {accountsClient} from "../helpers/clients";
+import {accountsClient} from "../utils/clients";
 
 export const useAuthStore = defineStore("auth", {
     state: () => ({
@@ -10,7 +10,6 @@ export const useAuthStore = defineStore("auth", {
 
     actions: {
         async authenticate(email: string, password: string) {
-
             try {
                 const data = await accountsClient.post("users/signin", {
                     email,
@@ -22,15 +21,14 @@ export const useAuthStore = defineStore("auth", {
                     token: data.data.token
                 }
 
-                //TODO:
                 localStorage.setItem("TOKEN", data.data.token);
 
                 axios.defaults.headers.common['Authorization'] = "Bearer " + data.data.token;
-
             } catch (error: any) {
-                if (error.response.status === 400 && error.response.data) {
+                if (error?.response?.status === 400 && error.response.data) {
                     throw new Error(error.response.data.errors[0].message)
                 }
+                throw new Error(error.message)
             }
         },
 
