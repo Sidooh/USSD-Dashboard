@@ -28,6 +28,6 @@ export type Session = Model & {
     product: number,
     created_at: Date,
     updated_at: Date,
-    screen_path: Object,
-    vars: Object
+    screen_path: {},
+    vars: {}
 }
