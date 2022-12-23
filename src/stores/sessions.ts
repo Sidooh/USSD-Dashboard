@@ -1,7 +1,8 @@
 import {defineStore} from "pinia";
-import {ussdClient} from "../helpers/clients";
+import {ussdClient} from "@/utils/clients";
+import { Session } from "@/utils/types";
 
-export const useSessionsStore = defineStore("session", {
+export const useSessionsStore = defineStore("sessions", {
     state: () => ({
         sessions: <Session[]>[],
         session: <Session>{}
@@ -9,11 +10,10 @@ export const useSessionsStore = defineStore("session", {
 
     actions: {
         async fetchSessions() {
-
-            console.log('fetch sessions')
             try {
-                const data = await ussdClient.get('/sessions/logs')
-                this.sessions = data.data
+                const { data } = await ussdClient.get('/sessions/logs')
+                console.log(data)
+                this.sessions = data
             } catch (e) {
                 console.error(e)
             }

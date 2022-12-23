@@ -1,6 +1,6 @@
 import axios from "axios"
-import {useAuthStore} from "../stores/auth"
-import router from "../routes"
+import { useAuthStore } from "../stores/auth"
+import router from "../router"
 
 
 // axios.interceptors.request.use(
@@ -26,7 +26,7 @@ axios.interceptors.response.use(
 
                 authStore.logout()
 
-                await router.push({name: 'login'})
+                await router.push({ name: 'login' })
             }
         }
 

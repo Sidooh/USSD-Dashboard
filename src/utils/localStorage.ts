@@ -1,7 +1,6 @@
 const prefix = 'sidooh'
 
 class LocalStorage {
-
     static set(key: string, value: any) {
         localStorage.setItem(`${prefix}:${key}`, value)
     }
