@@ -33,6 +33,9 @@ const columnHelper = createColumnHelper<Session>(),
         columnHelper.accessor('code', {
             header: 'Code',
         }),
+        columnHelper.accessor('product', {
+            header: 'Product',
+        }),
         columnHelper.accessor('phone', {
             header: 'Phone',
             cell: info => h(Phone, { phone: info.getValue() })

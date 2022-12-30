@@ -1,16 +1,25 @@
 <template>
     <div class="card overflow-hidden h-100">
         <div class="card-body d-flex flex-column justify-content-between"
-             style="height:300px; background-image: linear-gradient(-45deg, rgba(255, 255, 255, 1), rgba(245, 183, 0, 1))">
+             style="height:350px; background-image: linear-gradient(-45deg, rgba(255, 255, 255, 1), rgba(245, 183, 0, 1))">
+            <div class="align-items-center g-0 row justify-content-end">
+                <div class="col-auto">
+                    <select class="form-select form-select-sm px-2" v-model="chartSelect">
+                        <option v-for="(vt, i) in Object.keys(store.chart)" :key="`chart-opt-${i}`"
+                                :value="vt">{{ vt.replaceAll('_', ' ').toUpperCase() }}
+                        </option>
+                    </select>
+                </div>
+            </div>
 
-            <Line :options="chartOptions" :data="chartData"/>
+            <Line :options="chartOptions" :data="chartData" style="margin-bottom: 1.7rem;"/>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 import { Line } from 'vue-chartjs'
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import {
     CategoryScale,
     Chart,
@@ -25,6 +34,8 @@ import {
 } from 'chart.js'
 import { useDashboardStore } from "@/stores/dashboard";
 
+const chartSelect = ref<string>("LAST_7_DAYS")
+
 const store = useDashboardStore();
 
 Chart.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement)
@@ -34,13 +45,13 @@ Chart.defaults.font.weight = '700'
 Chart.defaults.font.family = "'Avenir', sans-serif"
 
 const chartData = computed<ChartData<'line'>>(() => ({
-    labels: store.chart.labels,
+    labels: store.chart[chartSelect.value].labels,
     datasets: [{
         label: `No of Sessions`,
-        data: store.chart.data,
+        data: store.chart[chartSelect.value].data,
         borderColor: ['rgba(0, 0, 0, 1)'],
         borderWidth: 2,
-        tension: 0.3,
+        tension: 0.4,
     }]
 }))
 const chartOptions = computed<ChartOptions<'line'>>(() => ({
@@ -70,6 +81,9 @@ const chartOptions = computed<ChartOptions<'line'>>(() => ({
             beginAtZero: true,
             grid: {
                 display: false
+            },
+            ticks: {
+                stepSize: 1,
             }
         },
         x: {

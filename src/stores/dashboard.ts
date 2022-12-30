@@ -6,7 +6,7 @@ import { groupBy } from "@/utils/helpers";
 
 export const useDashboardStore = defineStore("dashboard", {
     state: () => ({
-        chart: <{ labels: string[], data: number[] }>{ labels: [], data: [] },
+        chart: <{ [k: string]: { labels: string[], data: number[] } }>{ LAST_7_DAYS: { labels: [], data: [] } },
     }),
 
     actions: {
@@ -14,26 +14,29 @@ export const useDashboardStore = defineStore("dashboard", {
             try {
                 const { data: res } = await ussdClient.get('/sessions/logs')
 
-                const dataset: Session[] = res.filter((sess: Session) => moment(sess.created_at).isAfter(moment().subtract(7, 'd')))
-                    .map((d: Session) => ({ date: moment(d.created_at).format('Do MMM') }))
+                const getDataset = (duration: number) => {
+                    const dataset: Session[] = res.filter((sess: Session) => moment(sess.created_at).isAfter(moment().subtract(duration, 'd')))
+                        .map((d: Session) => ({ date: moment(d.created_at).format('Do MMM') }))
 
-                const byDay = groupBy(dataset, 'date')
+                    const byDay = groupBy(dataset, 'date')
 
-                let labels = [], data = []
-                for (let i = 7; i >= 0; i--) {
-                    let day = moment().subtract(i, 'd').format('Do MMM'),
-                        label = day
+                    let labels = [], data = []
+                    for (let i = duration; i >= 0; i--) {
+                        let day = moment().subtract(i, 'd').format('Do MMM'),
+                            label = day
 
-                    if (i === 0) label = 'Today'
-                    if (i === 1) label = 'Yesterday'
+                        if (i === 0) label = 'Today'
+                        if (i === 1) label = 'Yesterday'
 
-                    labels.push(label)
-                    data.push(!byDay[day] ? 0 : byDay[day].length)
+                        labels.push(label)
+                        data.push(!byDay[day] ? 0 : byDay[day].length)
+                    }
+
+                    return { labels, data }
                 }
 
-                this.chart = { labels, data }
-
-                return
+                this.chart.LAST_7_DAYS = getDataset(7)
+                this.chart.LAST_30_DAYS = getDataset(30)
             } catch (e) {
                 console.error(e)
             }
