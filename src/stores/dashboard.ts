@@ -13,7 +13,6 @@ export const useDashboardStore = defineStore("dashboard", {
         async fetchChartData() {
             try {
                 const { data: res } = await ussdClient.get('/sessions/logs')
-
                 const getDataset = (duration: number) => {
                     const dataset: Session[] = res.filter((sess: Session) => moment(sess.created_at).isAfter(moment().subtract(duration, 'd')))
                         .map((d: Session) => ({ date: moment(d.created_at).format('Do MMM') }))
