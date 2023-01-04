@@ -147,7 +147,7 @@ import Tooltip from "@/components/Tooltip.vue";
 
 const setPageSize = (e: any) => table.setPageSize(Number((e.target as HTMLSelectElement)?.value))
 
-const props = defineProps<{ title: string, columns: ColumnDef<any>[], data: any[], onCreateRow?: () => void; }>()
+const props = defineProps<{ title: string, columns: any[], data: any[], onCreateRow?: () => void; }>()
 
 const tableTitle = ref(props.title)
 
