@@ -16,6 +16,7 @@ import { Session } from "@/utils/types";
 import Phone from "@/components/Phone.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faEye } from "@fortawesome/free-regular-svg-icons";
+import TableDate from "@/components/TableDate.vue";
 
 const store = useSessionsStore()
 const router = useRouter()
@@ -39,6 +40,10 @@ const columnHelper = createColumnHelper<Session>(),
         columnHelper.accessor('phone', {
             header: 'Phone',
             cell: info => h(Phone, { phone: info.getValue() })
+        }),
+        columnHelper.accessor('created_at', {
+            header: 'Created',
+            cell: ({ row }: CellContext<Session, string>) => h(TableDate, { date: row.original.created_at })
         }),
         {
             id: 'actions',
