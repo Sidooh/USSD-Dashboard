@@ -6,8 +6,12 @@ ARG VITE_USSD_API_URL
 
 WORKDIR /app
 
+RUN ["yarn", "set", "version", "berry"]
+RUN ["yarn", "plugin", "import", "typescript"]
+
 COPY package.json ./
 COPY yarn.lock ./
+COPY .yarnrc.yml .
 
 RUN yarn install
 
