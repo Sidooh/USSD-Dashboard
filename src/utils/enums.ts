@@ -5,3 +5,9 @@ export enum Telco {
     SAFARICOM = 'SAFARICOM',
     TELKOM = 'TELKOM',
 }
+
+export enum Frequency {
+    DAILY = 'DAILY',
+    WEEKLY = 'WEEKLY',
+    MONTHLY = 'MONTHLY'
+}
