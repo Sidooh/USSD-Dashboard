@@ -123,7 +123,6 @@ import {
     faSortUp
 } from '@fortawesome/free-solid-svg-icons'
 import {
-    ColumnDef,
     ColumnFiltersState,
     FilterFn,
     FlexRender,
