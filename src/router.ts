@@ -13,7 +13,7 @@ const router = createRouter({
     routes: [
         { path: '/login', component: Login, meta: { layout: Auth, guest: true }, name: 'login' },
 
-        { path: '/', component: () => import("./pages/dashboard/Index.vue") },
+        { path: '/', name: 'dashboard', component: () => import("./pages/dashboard/Index.vue") },
         {
             path: '/sessions', children: [
                 { path: '', name: 'sessions', component: () => import("./pages/sessions/Index.vue") },
@@ -23,6 +23,12 @@ const router = createRouter({
 
         // Status check
         { path: '/__vite_ping', component: StatusPage, meta: { layout: Auth, guest: true }, name: 'status.ping' },
+
+        {
+            path: "/:pathMatch(.*)*",
+            name: "not-found",
+            redirect: () => ({ name: 'dashboard' })
+        },
     ]
 })
 
