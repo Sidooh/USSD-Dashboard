@@ -7,15 +7,13 @@
 </template>
 
 <script setup lang="ts">
-import DataTable from "@/components/datatable/DataTable.vue";
 import { Session } from "@/utils/types";
 import { CellContext, createColumnHelper } from "@tanstack/vue-table";
 import { h } from "vue";
-import Phone from "@/components/Phone.vue";
-import TableDate from "@/components/TableDate.vue";
 import { RouterLink } from "vue-router";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faEye } from "@fortawesome/free-regular-svg-icons";
+import { PhoneNumber, TableDate, DataTable } from "@nabcellent/sui-vue";
 
 defineProps<{ title?: string, sessions: Session[] }>()
 
@@ -35,7 +33,7 @@ const columnHelper = createColumnHelper<Session>(),
         }),
         columnHelper.accessor('phone', {
             header: 'Phone',
-            cell: info => h(Phone, { phone: info.getValue() })
+            cell: info => h(PhoneNumber, { phone: info.getValue() })
         }),
         columnHelper.accessor('created_at', {
             header: 'Created',

@@ -2,7 +2,6 @@ import { defineStore } from "pinia";
 import moment from "moment";
 import { ussdClient } from "@/utils/clients";
 import { Session } from "@/utils/types";
-import { Frequency } from "@/utils/enums";
 
 export const useDashboardStore = defineStore("dashboard", {
     state: () => ({

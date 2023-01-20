@@ -44,8 +44,7 @@ import { useCoreStore } from "@/stores/core";
 import { computed } from "vue";
 import { faGroupArrowsRotate, faPieChart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import Logo from "../Logo.vue";
-import { RouteType } from "@/utils/types";
+import { RouteType, Logo } from "@nabcellent/sui-vue";
 
 const store = useCoreStore()
 const toggleNav = () => store.toggleSideNav()
