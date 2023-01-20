@@ -325,15 +325,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/free-brands-svg-icons@npm:^6.2.1":
-  version: 6.2.1
-  resolution: "@fortawesome/free-brands-svg-icons@npm:6.2.1"
-  dependencies:
-    "@fortawesome/fontawesome-common-types": 6.2.1
-  checksum: e826787631672faed91b0a1f4bf1580582bd20f3aba1a8e547f0b49548d554a0ac629ea9d3998f076fb2574440f75e08536d088404f760c9910b9f185a6877f5
-  languageName: node
-  linkType: hard
-
 "@fortawesome/free-regular-svg-icons@npm:^6.2.1":
   version: 6.2.1
   resolution: "@fortawesome/free-regular-svg-icons@npm:6.2.1"
@@ -369,13 +360,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@juggle/resize-observer@npm:^3.3.1":
-  version: 3.4.0
-  resolution: "@juggle/resize-observer@npm:3.4.0"
-  checksum: 2505028c05cc2e17639fcad06218b1c4b60f932a4ebb4b41ab546ef8c157031ae377e3f560903801f6d01706dbefd4943b6c4704bf19ed86dfa1c62f1473a570
-  languageName: node
-  linkType: hard
-
 "@kurkle/color@npm:^0.3.0":
   version: 0.3.1
   resolution: "@kurkle/color@npm:0.3.1"
@@ -383,12 +367,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nabcellent/sui-vue@npm:^1.7.1":
-  version: 1.7.1
-  resolution: "@nabcellent/sui-vue@npm:1.7.1"
+"@nabcellent/sui-vue@npm:^1.7.2":
+  version: 1.7.2
+  resolution: "@nabcellent/sui-vue@npm:1.7.2"
   peerDependencies:
     vue: ^3.2.25
-  checksum: b1184f5b9e5267a1bc5e9ff8e5f9027ad39625d8a8b5aa85690b7d4f61afb0263cd7cf43c3058c450abd93d4069a22be1aba717cf06c137d48be1b239db8921d
+  checksum: 502d15a4ca307b1f8ac756dad86abed5c3cfafbf874c77f97cbbe831cb1528c371247a99c9e69ebcc19f605b9e1b71f6ab75ec6f587b983ac8e8841f5a27dda7
   languageName: node
   linkType: hard
 
@@ -419,30 +403,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/match-sorter-utils@npm:^8.7.2":
-  version: 8.7.2
-  resolution: "@tanstack/match-sorter-utils@npm:8.7.2"
-  dependencies:
-    remove-accents: 0.4.2
-  checksum: 0821430d7de76911481b5300f4812f7cfefb804bf2f23fb1bab45e66c273379f0c919785ca1aecd8614b72d9e5e0e0edf9f449cbbb87dd91166d77ca285351f6
+"@tanstack/table-core@npm:8.7.6":
+  version: 8.7.6
+  resolution: "@tanstack/table-core@npm:8.7.6"
+  checksum: edba55731245a5a1a46a9a69a1ca2a7d7ae24377ed478f6622d043b80b6f8fbcb19605843e0feb85b99b4a7d5407633be4e440e71c82a4bf876f05a62e8005ae
   languageName: node
   linkType: hard
 
-"@tanstack/table-core@npm:8.7.4":
-  version: 8.7.4
-  resolution: "@tanstack/table-core@npm:8.7.4"
-  checksum: 39e2b38ce6a08f3bdc0fea8d16eb92696283de33e17c756b5fec3d875a7f84512edc94edaf90a64e378a08c5681ed4843814f56841933a95ba7d60253c614e2d
-  languageName: node
-  linkType: hard
-
-"@tanstack/vue-table@npm:^8.7.4":
-  version: 8.7.4
-  resolution: "@tanstack/vue-table@npm:8.7.4"
+"@tanstack/vue-table@npm:^8.7.6":
+  version: 8.7.6
+  resolution: "@tanstack/vue-table@npm:8.7.6"
   dependencies:
-    "@tanstack/table-core": 8.7.4
+    "@tanstack/table-core": 8.7.6
   peerDependencies:
     vue: ^3.2.33
-  checksum: e5e9333957451b467e2c4664c04a6cd2feebf16ae3b55555dfb28ccc029c988f4ba53cdbe4581056a6ab802b6fae4b7b9f222acf9cdb5927cb16616f8145433b
+  checksum: 633f4708b686d6c5f46b7057067ae47f80ee54e68abf7ad7555b07d99ba4391b2f6dddd4eeaf0c782aca1b4b5aed7314d98c374443d76072feb6db811ae562a4
   languageName: node
   linkType: hard
 
@@ -783,13 +758,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"can-use-dom@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "can-use-dom@npm:0.1.0"
-  checksum: 488fc94c40f2fcce46ebd41abf17ef0449acf0d6b145116036cd592a8e977e5729918d4b3b7c642ce7b1f5b83d330ade39a172cf6b6ef91093785991a868b308
-  languageName: node
-  linkType: hard
-
 "chart.js@npm:^4.1.1":
   version: 4.1.1
   resolution: "chart.js@npm:4.1.1"
@@ -842,13 +810,6 @@ __metadata:
   version: 1.1.0
   resolution: "console-control-strings@npm:1.1.0"
   checksum: 8755d76787f94e6cf79ce4666f0c5519906d7f5b02d4b884cf41e11dcd759ed69c57da0670afd9236d229a46e0f9cf519db0cd829c6dca820bb5a5c3def584ed
-  languageName: node
-  linkType: hard
-
-"core-js@npm:^3.0.1":
-  version: 3.26.1
-  resolution: "core-js@npm:3.26.1"
-  checksum: 0a01149f51ff1e9f41d1ea49cc4c9222047949ea597189ede7c4cf8cde3b097766b9c7615acc77c86fe65b4002f20b638a133dfba7b41dba830d707aeeed45ad
   languageName: node
   linkType: hard
 
@@ -1279,27 +1240,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.debounce@npm:^4.0.8":
-  version: 4.0.8
-  resolution: "lodash.debounce@npm:4.0.8"
-  checksum: a3f527d22c548f43ae31c861ada88b2637eb48ac6aa3eb56e82d44917971b8aa96fbb37aa60efea674dc4ee8c42074f90f7b1f772e9db375435f6c83a19b3bc6
-  languageName: node
-  linkType: hard
-
-"lodash.memoize@npm:^4.1.2":
-  version: 4.1.2
-  resolution: "lodash.memoize@npm:4.1.2"
-  checksum: 9ff3942feeccffa4f1fafa88d32f0d24fdc62fd15ded5a74a5f950ff5f0c6f61916157246744c620173dddf38d37095a92327d5fd3861e2063e736a5c207d089
-  languageName: node
-  linkType: hard
-
-"lodash.throttle@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "lodash.throttle@npm:4.1.1"
-  checksum: 129c0a28cee48b348aef146f638ef8a8b197944d4e9ec26c1890c19d9bf5a5690fe11b655c77a4551268819b32d27f4206343e30c78961f60b561b8608c8c805
-  languageName: node
-  linkType: hard
-
 "lru-cache@npm:^6.0.0":
   version: 6.0.0
   resolution: "lru-cache@npm:6.0.0"
@@ -1673,13 +1613,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"remove-accents@npm:0.4.2":
-  version: 0.4.2
-  resolution: "remove-accents@npm:0.4.2"
-  checksum: 84a6988555dea24115e2d1954db99509588d43fe55a1590f0b5894802776f7b488b3151c37ceb9e4f4b646f26b80b7325dcea2fae58bc3865df146e1fa606711
-  languageName: node
-  linkType: hard
-
 "resolve@npm:^1.22.1":
   version: 1.22.1
   resolution: "resolve@npm:1.22.1"
@@ -1777,20 +1710,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"simplebar@npm:^5.3.9":
-  version: 5.3.9
-  resolution: "simplebar@npm:5.3.9"
-  dependencies:
-    "@juggle/resize-observer": ^3.3.1
-    can-use-dom: ^0.1.0
-    core-js: ^3.0.1
-    lodash.debounce: ^4.0.8
-    lodash.memoize: ^4.1.2
-    lodash.throttle: ^4.1.1
-  checksum: 11918d02c946b4925068852b4fb2dcc5008e2fb91b7eeba6c27aed810f23b985de043b12fef674fbffbbfa6201904e09d8fbc29e9959562fa6a5cfb9935751d1
-  languageName: node
-  linkType: hard
-
 "smart-buffer@npm:^4.2.0":
   version: 4.2.0
   resolution: "smart-buffer@npm:4.2.0"
@@ -1885,13 +1804,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sweetalert2@npm:^11.6.16":
-  version: 11.6.16
-  resolution: "sweetalert2@npm:11.6.16"
-  checksum: 7c68f01215e6eefee3162859a389a850fab64adcdb3169899a1169e3592dc5e9403e8145f9ff76ba3bc97dd9a07cc5c050fda0451fb191242fa0d1fc7993b33a
-  languageName: node
-  linkType: hard
-
 "tar@npm:^6.1.11, tar@npm:^6.1.2":
   version: 6.1.11
   resolution: "tar@npm:6.1.11"
@@ -1957,14 +1869,12 @@ __metadata:
   dependencies:
     "@formkit/vue": ^1.0.0-beta.12
     "@fortawesome/fontawesome-svg-core": ^6.2.1
-    "@fortawesome/free-brands-svg-icons": ^6.2.1
     "@fortawesome/free-regular-svg-icons": ^6.2.1
     "@fortawesome/free-solid-svg-icons": ^6.2.1
     "@fortawesome/vue-fontawesome": latest-3
-    "@nabcellent/sui-vue": ^1.7.1
+    "@nabcellent/sui-vue": ^1.7.2
     "@popperjs/core": ^2.11.6
-    "@tanstack/match-sorter-utils": ^8.7.2
-    "@tanstack/vue-table": ^8.7.4
+    "@tanstack/vue-table": ^8.7.6
     "@types/node": ^18.11.18
     "@vitejs/plugin-vue": ^4.0.0
     axios: ^1.2.1
@@ -1972,8 +1882,6 @@ __metadata:
     chart.js: ^4.1.1
     moment: ^2.29.4
     pinia: ^2.0.28
-    simplebar: ^5.3.9
-    sweetalert2: ^11.6.16
     typescript: ^4.9.4
     vite: ^4.0.4
     vue: ^3.2.45
