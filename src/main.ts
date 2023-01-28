@@ -8,9 +8,10 @@ import axios from "axios"
 import App from './App.vue'
 import router from "./router"
 import { useAuthStore } from "./stores/auth"
+import { defaultConfig, plugin } from "@formkit/vue";
 
 import 'bootstrap/dist/js/bootstrap.min.js'
-import { defaultConfig, plugin } from "@formkit/vue";
+import '@nabcellent/sui-vue/dist/style.min.css'
 
 //initialize
 createApp(App)

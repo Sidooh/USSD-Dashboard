@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import { useAuthStore } from "@/stores/auth";
 import router from "../../router";
-import Logo from "../../components/Logo.vue";
-import { toast } from "@/utils/helpers";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faKey } from "@fortawesome/free-solid-svg-icons";
 import { FormKitGroupValue, FormKitNode } from "@formkit/core";
 import { ref } from "vue";
+import { toast, Logo } from "@nabcellent/sui-vue";
 
 const isLoading = ref(false)
 
@@ -18,7 +17,11 @@ const submit = async (formData: FormKitGroupValue, node: FormKitNode) => {
 
         await useAuthStore().authenticate(data.email, data.password)
 
-        router.push('/')
+        const intended = localStorage.getItem('urlIntended')
+
+        await router.push({ path: intended ?? '/' })
+
+        localStorage.removeItem('urlIntended')
     } catch (err: any) {
         isLoading.value = false
 
@@ -32,7 +35,7 @@ const submit = async (formData: FormKitGroupValue, node: FormKitNode) => {
 <template>
     <div class="row flex-center min-vh-100 pb-6">
         <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4 position-relative">
-            <Logo src="/logo.png" :width="120" service-name="Accounts"/>
+            <Logo src="/logo.png" :width="120" service-name="USSD"/>
             <img class="bg-auth-circle-shape" src="/images/icons/spot-illustrations/bg-shape.png" alt="" width="250">
             <img class="bg-auth-circle-shape-2" src="/images/icons/spot-illustrations/shape-1.png" alt="" width="150">
             <div class="card">

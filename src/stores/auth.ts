@@ -1,10 +1,13 @@
 import {defineStore} from "pinia";
 import axios from "axios";
-import {accountsClient} from "../utils/clients";
+import {accountsClient} from "@/utils/clients";
+import { JWT, logger } from "@nabcellent/sui-vue";
+import moment from "moment";
+import router from "@/router";
 
 export const useAuthStore = defineStore("auth", {
     state: () => ({
-        token: '',
+        token: <string | null>null,
         user: {}
     }),
 
@@ -21,11 +24,9 @@ export const useAuthStore = defineStore("auth", {
                     token: data.data.access_token
                 }
 
-                //TODO:
-                localStorage.setItem("TOKEN", data.data.access_token);
+                localStorage.setItem("token", data.data.access_token);
 
                 axios.defaults.headers.common['Authorization'] = "Bearer " + data.data.access_token;
-
             } catch (error: any) {
                 if (error?.response?.status === 400 && error.response.data) {
                     throw new Error(error.response.data.errors[0].message)
@@ -35,17 +36,25 @@ export const useAuthStore = defineStore("auth", {
         },
 
         checkLocalAuth() {
-            const token = localStorage.getItem("TOKEN")
+            this.token = localStorage.getItem("token")
+            this.user = JSON.parse(String(localStorage.getItem("user")))
 
-            if (token) {
-                this.token = token
+            if(this.token) {
+                const tokenData = JWT.decode(this.token)
+                const expiresIn = moment.unix(tokenData.exp).diff(moment(), 'minutes');
+
+                logger.log(`Session expires in: ${expiresIn} minutes`);
+
+                if (moment.unix(tokenData.exp).isBefore(moment())) this.logout()
             }
         },
 
         logout() {
             this.$reset()
 
-            localStorage.removeItem('TOKEN')
+            localStorage.removeItem('token')
+
+            router.push({ name: 'login' })
         }
     }
 })

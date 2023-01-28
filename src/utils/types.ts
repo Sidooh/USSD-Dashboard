@@ -1,22 +1,4 @@
-import { IconDefinition } from "@fortawesome/free-regular-svg-icons";
-import { RouteLocationRaw } from "vue-router";
-
-type RouteChildType = {
-    name: string
-    to: RouteLocationRaw
-    active?: boolean
-    icon?: IconDefinition
-    children?: RouteChildType[]
-}
-export type RouteType = {
-    label?: string
-    children: RouteChildType[]
-}
-type Model = {
-    id?: number
-    created_at?: string
-    updated_at?: string
-}
+import { Model } from "@nabcellent/sui-vue";
 
 export type Session = Model & {
     id: string,

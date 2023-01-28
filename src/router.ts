@@ -11,25 +11,39 @@ const router = createRouter({
     // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
     history: createWebHistory(),
     routes: [
-        { path: '/login', component: Login, meta: { layout: Auth, guest: true }, name: 'login' },
+        { path: '/login', component: Login, meta: { layout: Auth }, name: 'login' },
 
-        { path: '/', component: () => import("./pages/dashboard/Index.vue") },
+        { path: '/', name: 'dashboard', meta: { auth: true }, component: () => import("./pages/dashboard/Index.vue") },
         {
-            path: '/sessions', children: [
+            path: '/sessions', meta: { auth: true }, children: [
                 { path: '', name: 'sessions', component: () => import("./pages/sessions/Index.vue") },
                 { path: ':id', name: 'sessions.show', component: () => import("./pages/sessions/Show.vue") }
             ]
         },
 
         // Status check
-        { path: '/__vite_ping', component: StatusPage, meta: { layout: Auth, guest: true }, name: 'status.ping' },
+        { path: '/__vite_ping', component: StatusPage, meta: { layout: Auth }, name: 'status.ping' },
+
+        {
+            path: "/:pathMatch(.*)*",
+            name: "not-found",
+            redirect: () => ({ name: 'dashboard' })
+        },
     ]
 })
 
-router.beforeEach((to) => {
-    const authStore = useAuthStore()
+router.beforeEach((to, from, next) => {
+    const { token } = useAuthStore()
 
-    if (!authStore.token && !to.meta.guest) return '/login'
+    if (!token && to.meta.auth) {
+        localStorage.setItem('urlIntended', to.path)
+
+        next({ name: 'login' });
+    } else if (!to.meta.auth && token) {
+        next({ name: 'dashboard' });
+    } else {
+        next()
+    }
 })
 
 export default router
