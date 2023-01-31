@@ -15,6 +15,13 @@ const waffleLinks = [
         enabled: true
     },
     {
+        avatarText: 'E',
+        title: 'Enterprise',
+        link: CONFIG.sidooh.services.enterprise.dashboard.url,
+        contentClass: 'bg-soft-primary text-primary',
+        enabled: true
+    },
+    {
         avatarText: 'N',
         title: 'Notify',
         link: CONFIG.sidooh.services.notify.dashboard.url,
