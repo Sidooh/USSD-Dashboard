@@ -2,7 +2,7 @@
 import { useAuthStore } from "@/stores/auth";
 import router from "../../router";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faKey } from "@fortawesome/free-solid-svg-icons";
+import { faUnlockKeyhole } from "@fortawesome/free-solid-svg-icons";
 import { FormKitGroupValue, FormKitNode } from "@formkit/core";
 import { ref } from "vue";
 import { toast, Logo } from "@nabcellent/sui-vue";
@@ -47,16 +47,19 @@ const submit = async (formData: FormKitGroupValue, node: FormKitNode) => {
                     </div>
                     <FormKit id="sign-in" type="form" :actions="false" @submit="submit"
                              #default="{ value, state: { valid } }">
-                        <FormKit class="form-control" type="email" name="email" placeholder="Email address"
-                                 :config="{classes:{input:'form-control', outer:'mb-3'}}" validation="required"/>
+                        <FormKit class="form-control" type="email" name="email" placeholder="Email address" autofocus
+                                 autocomplete="email" :config="{classes:{input:'form-control', outer:'mb-3'}}"
+                                 validation="required"/>
                         <FormKit class="form-control" type="password" name="password" placeholder="Password"
-                                 :config="{classes:{input:'form-control', outer:'mb-3'}}" validation="required"/>
+                                 autoComplete="current-password" validation="required"
+                                 :config="{classes:{input:'form-control', outer:'mb-3'}}"/>
                         <div class="d-flex justify-content-end">
                             <a class="fs--1" href="/password/reset">Forgot Password?</a>
                         </div>
-                        <FormKit type="submit" input-class="w-100 btn btn-sm btn-primary mt-3" :disabled="!valid || isLoading">
-                            Sign In
-                            <font-awesome-icon :icon="faKey"/>
+                        <FormKit type="submit" input-class="w-100 btn btn-sm btn-primary mt-3"
+                                 :disabled="!valid || isLoading">
+                            Sign In &nbsp;
+                            <font-awesome-icon :icon="faUnlockKeyhole"/>
                         </FormKit>
                     </FormKit>
                     <div class="position-relative mt-4">
