@@ -1,9 +1,10 @@
 import {defineStore} from "pinia";
 import axios from "axios";
 import {accountsClient} from "@/utils/clients";
-import { JWT, logger } from "@nabcellent/sui-vue";
+import { JWT } from "@nabcellent/sui-vue";
 import moment from "moment";
 import router from "@/router";
+import { logger } from "@/utils/logger";
 
 export const useAuthStore = defineStore("auth", {
     state: () => ({
