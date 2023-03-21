@@ -10,10 +10,10 @@ export const useDashboardStore = defineStore("dashboard", {
         recentSessions: <Session[]>[],
         summaries: {
             sessions: {
-                total: null,
-                today: null
+                total: 0,
+                today: 0
             },
-            ussd_balance: null
+            ussd_balance: 0
         }
     }),
 
