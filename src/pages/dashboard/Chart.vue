@@ -1,8 +1,9 @@
 <template>
-    <div class="card overflow-hidden h-100">
+    <div class="mb-0 mb-xxl-3 card">
+        <card-bg-corner :corner="3"/>
         <div class="card-body d-flex flex-column justify-content-between"
-             style="height:350px; background-image: linear-gradient(-45deg, rgba(255, 255, 255, 1), rgba(245, 183, 0, 1))">
-            <div class="align-items-center g-0 row justify-content-end">
+             style="height: 300px; background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0), rgba(245, 183, 0, 1))">
+            <div class="position-absolute right-0 me-3 align-items-center gx-1 row justify-content-end">
                 <div class="col-auto">
                     <select class="form-select form-select-sm px-2" v-model="chartSelect">
                         <option v-for="(vt, i) in Object.keys(store.chart)" :key="`chart-opt-${i}`"
@@ -12,7 +13,7 @@
                 </div>
             </div>
 
-            <Line :options="chartOptions" :data="chartData" style="margin-bottom: 1.7rem;"/>
+            <Line :options="chartOptions" :data="chartData"/>
         </div>
     </div>
 </template>
@@ -33,6 +34,7 @@ import {
     Tooltip
 } from 'chart.js'
 import { useDashboardStore } from "@/stores/dashboard";
+import { CardBgCorner } from "@nabcellent/sui-vue";
 
 const chartSelect = ref<string>("LAST_7_DAYS")
 
@@ -60,17 +62,16 @@ const chartOptions = computed<ChartOptions<'line'>>(() => ({
     plugins: {
         title: {
             display: true,
-            text: 'SESSIONS PER DAY',
+            text: 'SESSIONS',
             font: {
                 size: 17
             }
         },
-        subtitle: {
-            display: true,
-            text: 'Last 7 days'
-        },
         legend: {
             display: false
+        },
+        tooltip: {
+            displayColors: false,
         }
     },
     interaction: {

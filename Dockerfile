@@ -12,12 +12,9 @@ ARG VITE_SAVINGS_DASHBOARD_URL
 
 WORKDIR /app
 
-RUN ["yarn", "set", "version", "berry"]
-RUN ["yarn", "plugin", "import", "typescript"]
-
-COPY package.json ./
-COPY yarn.lock ./
-COPY .yarnrc.yml .
+COPY ["package.json", "yarn.lock", ".yarnrc.yml", "./"]
+COPY [".yarn/plugins/", "./.yarn/plugins/"]
+COPY [".yarn/releases/", "./.yarn/releases/"]
 
 RUN yarn install
 

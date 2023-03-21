@@ -2,17 +2,25 @@ import { defineStore } from "pinia";
 import moment from "moment";
 import { ussdClient } from "@/utils/clients";
 import { Session } from "@/utils/types";
+import { logger } from "@/utils/logger";
 
 export const useDashboardStore = defineStore("dashboard", {
     state: () => ({
         chart: <{ [k: string]: { labels: string[], data: number[] } }>{ LAST_7_DAYS: { labels: [], data: [] } },
-        recentSessions: <Session[]>[]
+        recentSessions: <Session[]>[],
+        summaries: {
+            sessions: {
+                total: null,
+                today: null
+            },
+            ussd_balance: null
+        }
     }),
 
     actions: {
         async fetchChartData() {
             try {
-                const { data: res } = await ussdClient.get('/dashboard/chart')
+                const { data: { data: res } } = await ussdClient.get('/dashboard/chart')
 
                 const getDataset = (duration: number) => {
                     let labels: string[] = [], data: number[] = []
@@ -27,7 +35,7 @@ export const useDashboardStore = defineStore("dashboard", {
                         data.push(existingSet ? existingSet.count : 0)
                     }
 
-                    return {labels, data}
+                    return { labels, data }
                 }
 
                 this.chart.LAST_7_DAYS = getDataset(7)
@@ -40,9 +48,19 @@ export const useDashboardStore = defineStore("dashboard", {
             try {
                 const { data } = await ussdClient.get('/dashboard/recent-sessions')
 
-                this.recentSessions = data
+                this.recentSessions = data.data
             } catch (e) {
                 console.error(e)
+            }
+        },
+
+        async fetchSummaries() {
+            try {
+                const { data } = await ussdClient.get('/dashboard/summaries')
+
+                this.summaries = data.data
+            } catch (e) {
+                logger.error(e)
             }
         },
     }
