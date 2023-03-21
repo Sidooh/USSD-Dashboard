@@ -13,7 +13,6 @@ ARG VITE_SAVINGS_DASHBOARD_URL
 WORKDIR /app
 
 COPY ["package.json", "yarn.lock", ".yarnrc.yml", "./"]
-COPY [".yarn/plugins/", "./.yarn/plugins/"]
 COPY [".yarn/releases/", "./.yarn/releases/"]
 
 RUN yarn install
