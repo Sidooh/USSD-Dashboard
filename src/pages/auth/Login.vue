@@ -9,12 +9,10 @@ import { toast, Logo } from "@nabcellent/sui-vue";
 
 const isLoading = ref(false)
 
-const submit = async (formData: FormKitGroupValue, node: FormKitNode) => {
+const submit = async (data: { email: string, password: string }, node?: FormKitNode | undefined) => {
     isLoading.value = true
 
     try {
-        const data = formData as { email: string, password: string }
-
         await useAuthStore().authenticate(data.email, data.password)
 
         const intended = localStorage.getItem('urlIntended')

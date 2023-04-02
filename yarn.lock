@@ -39,227 +39,227 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@esbuild/android-arm64@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/android-arm64@npm:0.16.17"
+"@esbuild/android-arm64@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/android-arm64@npm:0.17.12"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
 
-"@esbuild/android-arm@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/android-arm@npm:0.16.17"
+"@esbuild/android-arm@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/android-arm@npm:0.17.12"
   conditions: os=android & cpu=arm
   languageName: node
   linkType: hard
 
-"@esbuild/android-x64@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/android-x64@npm:0.16.17"
+"@esbuild/android-x64@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/android-x64@npm:0.17.12"
   conditions: os=android & cpu=x64
   languageName: node
   linkType: hard
 
-"@esbuild/darwin-arm64@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/darwin-arm64@npm:0.16.17"
+"@esbuild/darwin-arm64@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/darwin-arm64@npm:0.17.12"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@esbuild/darwin-x64@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/darwin-x64@npm:0.16.17"
+"@esbuild/darwin-x64@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/darwin-x64@npm:0.17.12"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@esbuild/freebsd-arm64@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/freebsd-arm64@npm:0.16.17"
+"@esbuild/freebsd-arm64@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/freebsd-arm64@npm:0.17.12"
   conditions: os=freebsd & cpu=arm64
   languageName: node
   linkType: hard
 
-"@esbuild/freebsd-x64@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/freebsd-x64@npm:0.16.17"
+"@esbuild/freebsd-x64@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/freebsd-x64@npm:0.17.12"
   conditions: os=freebsd & cpu=x64
   languageName: node
   linkType: hard
 
-"@esbuild/linux-arm64@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/linux-arm64@npm:0.16.17"
+"@esbuild/linux-arm64@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/linux-arm64@npm:0.17.12"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"@esbuild/linux-arm@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/linux-arm@npm:0.16.17"
+"@esbuild/linux-arm@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/linux-arm@npm:0.17.12"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@esbuild/linux-ia32@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/linux-ia32@npm:0.16.17"
+"@esbuild/linux-ia32@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/linux-ia32@npm:0.17.12"
   conditions: os=linux & cpu=ia32
   languageName: node
   linkType: hard
 
-"@esbuild/linux-loong64@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/linux-loong64@npm:0.16.17"
+"@esbuild/linux-loong64@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/linux-loong64@npm:0.17.12"
   conditions: os=linux & cpu=loong64
   languageName: node
   linkType: hard
 
-"@esbuild/linux-mips64el@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/linux-mips64el@npm:0.16.17"
+"@esbuild/linux-mips64el@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/linux-mips64el@npm:0.17.12"
   conditions: os=linux & cpu=mips64el
   languageName: node
   linkType: hard
 
-"@esbuild/linux-ppc64@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/linux-ppc64@npm:0.16.17"
+"@esbuild/linux-ppc64@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/linux-ppc64@npm:0.17.12"
   conditions: os=linux & cpu=ppc64
   languageName: node
   linkType: hard
 
-"@esbuild/linux-riscv64@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/linux-riscv64@npm:0.16.17"
+"@esbuild/linux-riscv64@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/linux-riscv64@npm:0.17.12"
   conditions: os=linux & cpu=riscv64
   languageName: node
   linkType: hard
 
-"@esbuild/linux-s390x@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/linux-s390x@npm:0.16.17"
+"@esbuild/linux-s390x@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/linux-s390x@npm:0.17.12"
   conditions: os=linux & cpu=s390x
   languageName: node
   linkType: hard
 
-"@esbuild/linux-x64@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/linux-x64@npm:0.16.17"
+"@esbuild/linux-x64@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/linux-x64@npm:0.17.12"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"@esbuild/netbsd-x64@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/netbsd-x64@npm:0.16.17"
+"@esbuild/netbsd-x64@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/netbsd-x64@npm:0.17.12"
   conditions: os=netbsd & cpu=x64
   languageName: node
   linkType: hard
 
-"@esbuild/openbsd-x64@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/openbsd-x64@npm:0.16.17"
+"@esbuild/openbsd-x64@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/openbsd-x64@npm:0.17.12"
   conditions: os=openbsd & cpu=x64
   languageName: node
   linkType: hard
 
-"@esbuild/sunos-x64@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/sunos-x64@npm:0.16.17"
+"@esbuild/sunos-x64@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/sunos-x64@npm:0.17.12"
   conditions: os=sunos & cpu=x64
   languageName: node
   linkType: hard
 
-"@esbuild/win32-arm64@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/win32-arm64@npm:0.16.17"
+"@esbuild/win32-arm64@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/win32-arm64@npm:0.17.12"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@esbuild/win32-ia32@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/win32-ia32@npm:0.16.17"
+"@esbuild/win32-ia32@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/win32-ia32@npm:0.17.12"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@esbuild/win32-x64@npm:0.16.17":
-  version: 0.16.17
-  resolution: "@esbuild/win32-x64@npm:0.16.17"
+"@esbuild/win32-x64@npm:0.17.12":
+  version: 0.17.12
+  resolution: "@esbuild/win32-x64@npm:0.17.12"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@formkit/core@npm:1.0.0-beta.9-f64c966":
-  version: 1.0.0-beta.9-f64c966
-  resolution: "@formkit/core@npm:1.0.0-beta.9-f64c966"
+"@formkit/core@npm:0.16.2":
+  version: 0.16.2
+  resolution: "@formkit/core@npm:0.16.2"
   dependencies:
-    "@formkit/utils": 1.0.0-beta.9-f64c966
-  checksum: bd9954f1c2e74964b17a55927d0cebf1a75518baaea1be2353413c3b4b99b7f7f567e31a7035865a4482bc0e4cb62c1ef4214e9696a4b2f5c5d72ae049e5fe86
+    "@formkit/utils": 0.16.2
+  checksum: b739fd5f7cfdae2f4700f6db0f909c2d5947ac2499a161f47bcf5e14f503ad0afee15eaf8e7ce6475a17ff3605ec33ebfa10be8f7dade7dff44f95a741213232
   languageName: node
   linkType: hard
 
-"@formkit/dev@npm:1.0.0-beta.9-f64c966":
-  version: 1.0.0-beta.9-f64c966
-  resolution: "@formkit/dev@npm:1.0.0-beta.9-f64c966"
+"@formkit/dev@npm:0.16.2":
+  version: 0.16.2
+  resolution: "@formkit/dev@npm:0.16.2"
   dependencies:
-    "@formkit/core": 1.0.0-beta.9-f64c966
-    "@formkit/utils": 1.0.0-beta.9-f64c966
-  checksum: b69bd70756c0dc41415def6c43cd43d9c005a95da77d763be291e45419a58824eb3a6aeffa0636b07cc93791d0d68d84f08090d8674fe93bdf7f5bb82c101177
+    "@formkit/core": 0.16.2
+    "@formkit/utils": 0.16.2
+  checksum: c65e9534394e9b52be3216ffbe7941ccc8d877fc490413ac4a51ba36fc402192a534a7ede37f4b82eb2cb645e6ad91790e497af1cee64ec1991c8810b9d2e7ff
   languageName: node
   linkType: hard
 
-"@formkit/i18n@npm:1.0.0-beta.9-f64c966":
-  version: 1.0.0-beta.9-f64c966
-  resolution: "@formkit/i18n@npm:1.0.0-beta.9-f64c966"
+"@formkit/i18n@npm:0.16.2":
+  version: 0.16.2
+  resolution: "@formkit/i18n@npm:0.16.2"
   dependencies:
-    "@formkit/core": 1.0.0-beta.9-f64c966
-    "@formkit/utils": 1.0.0-beta.9-f64c966
-    "@formkit/validation": 1.0.0-beta.9-f64c966
-  checksum: 2117e35dba014a8ce282cb042d04009969c47f638de125275f8adbae3b5d0ad9170f59b02aeeec05f2d6b0daaa37a892042712ae93ec73cc6f0e2b105b681f1b
+    "@formkit/core": 0.16.2
+    "@formkit/utils": 0.16.2
+    "@formkit/validation": 0.16.2
+  checksum: 56da5d2974a4c1bc33bf787270caf2e1f5e98393332d296e3667f0e53256db354ac3d252bceef460dc845c824b070572b3e4c93c59b1aa772d242263407b568e
   languageName: node
   linkType: hard
 
-"@formkit/inputs@npm:1.0.0-beta.9-f64c966":
-  version: 1.0.0-beta.9-f64c966
-  resolution: "@formkit/inputs@npm:1.0.0-beta.9-f64c966"
+"@formkit/inputs@npm:0.16.2":
+  version: 0.16.2
+  resolution: "@formkit/inputs@npm:0.16.2"
   dependencies:
-    "@formkit/core": 1.0.0-beta.9-f64c966
-  checksum: 054015db3ae776171f62b419ff485546bacdd1c319ae9c815565de26c96b95d25cc6a9293518d86f329f6078cd0070c1fa976a7f2155421c3e4c2d46356e2336
+    "@formkit/core": 0.16.2
+  checksum: bcd2a6c70047638d3ae600005b21b628d6b547ce687bd7d22cec79e60b5659937cbdf3df9ede5f95bbb10dd2deafa3691b8140007ca93fc271a778ae51995feb
   languageName: node
   linkType: hard
 
-"@formkit/observer@npm:1.0.0-beta.9-f64c966":
-  version: 1.0.0-beta.9-f64c966
-  resolution: "@formkit/observer@npm:1.0.0-beta.9-f64c966"
+"@formkit/observer@npm:0.16.2":
+  version: 0.16.2
+  resolution: "@formkit/observer@npm:0.16.2"
   dependencies:
-    "@formkit/core": 1.0.0-beta.9-f64c966
-    "@formkit/utils": 1.0.0-beta.9-f64c966
-  checksum: 4358245658143f4365b29dfceb9c8dba35b42f1786fd69863e696c4d3dacef1149d0bffbccbfd5038ef38bf13f97fd1b1df5ad0cf12214dc7970e264376d747d
+    "@formkit/core": 0.16.2
+    "@formkit/utils": 0.16.2
+  checksum: 74f5d414fae72610ebdcc61e2382634e4cfd0eb66ef429b674529d9d9237842f1734ea241927b05e113e1d0b294edc50bd7e6b11682e88ace4767a442209f9ba
   languageName: node
   linkType: hard
 
-"@formkit/rules@npm:1.0.0-beta.9-f64c966":
-  version: 1.0.0-beta.9-f64c966
-  resolution: "@formkit/rules@npm:1.0.0-beta.9-f64c966"
+"@formkit/rules@npm:0.16.2":
+  version: 0.16.2
+  resolution: "@formkit/rules@npm:0.16.2"
   dependencies:
-    "@formkit/core": 1.0.0-beta.9-f64c966
-    "@formkit/utils": 1.0.0-beta.9-f64c966
-    "@formkit/validation": 1.0.0-beta.9-f64c966
-  checksum: cd3b64e49878a01a48cec9a43f0b25463535fa64460892cc9d7d2b768e9a0729e3c3b54b9db33ee35adc1e4bc2b6a3e972752d28dabce2f79c90922044825f22
+    "@formkit/core": 0.16.2
+    "@formkit/utils": 0.16.2
+    "@formkit/validation": 0.16.2
+  checksum: f4afd51828746203797bccae2267ad39771d2532ef54867e14ed4c8c7c020bd379bbc6cb40a9e156608d35ab101a01995478669c2a301e1af7d89dc6ebd77ed8
   languageName: node
   linkType: hard
 
-"@formkit/themes@npm:1.0.0-beta.9-f64c966":
-  version: 1.0.0-beta.9-f64c966
-  resolution: "@formkit/themes@npm:1.0.0-beta.9-f64c966"
+"@formkit/themes@npm:0.16.2":
+  version: 0.16.2
+  resolution: "@formkit/themes@npm:0.16.2"
   dependencies:
-    "@formkit/core": 1.0.0-beta.9-f64c966
+    "@formkit/core": 0.16.2
   peerDependencies:
-    tailwindcss: ^3.0.0
+    tailwindcss: ^3.2.0
     unocss: ^0.31.0
     windicss: ^3.0.0
   peerDependenciesMeta:
@@ -269,43 +269,43 @@ __metadata:
       optional: true
     windicss:
       optional: true
-  checksum: f855ec0a67af776e5d3064ed9a11eb6fbd113eca7036531690fbb7354d62e2baef11c80e9f5da1891645b33bec413a4b0955608ad7eae12b831d60c491c0853c
+  checksum: aded48f54575e814563c3d494b4a27c743d68b6abda4448711384f13ed2b22facca8597d1509ffb473b8d6d48884dc70a6fe734b61d51b94deef5d463e3537d4
   languageName: node
   linkType: hard
 
-"@formkit/utils@npm:1.0.0-beta.9-f64c966":
-  version: 1.0.0-beta.9-f64c966
-  resolution: "@formkit/utils@npm:1.0.0-beta.9-f64c966"
-  checksum: 9670088c1a1cc5929dd9a1663145688302d46661631be863858bdb8dd69e64a68bb640c6973e77c9247e46c9a5e7dd37445593e41573afee3d077dfd0e6f5574
+"@formkit/utils@npm:0.16.2":
+  version: 0.16.2
+  resolution: "@formkit/utils@npm:0.16.2"
+  checksum: d618cd75b43010138c91624018c4f4784173eb6cc5c4dd577a35297a486f8016ce094d063cf1883851b1a5619d2e20d6e81f65f65459ab9ebd1a002d560f4f20
   languageName: node
   linkType: hard
 
-"@formkit/validation@npm:1.0.0-beta.9-f64c966":
-  version: 1.0.0-beta.9-f64c966
-  resolution: "@formkit/validation@npm:1.0.0-beta.9-f64c966"
+"@formkit/validation@npm:0.16.2":
+  version: 0.16.2
+  resolution: "@formkit/validation@npm:0.16.2"
   dependencies:
-    "@formkit/core": 1.0.0-beta.9-f64c966
-    "@formkit/observer": 1.0.0-beta.9-f64c966
-  checksum: b41486ab8105720d6e8fab47a32ab73ab561ebf33f35437011521846df4e0cf4896fe1493e988dc7e75375a18bc0ebfc2af08f93d9d3cc450e0756d3ff18f4ad
+    "@formkit/core": 0.16.2
+    "@formkit/observer": 0.16.2
+  checksum: 0de03c85fdedead1ca856cb5a9b72b953aabc95d9cdb08ef654b790fc1df781563bcb6ffd88541602e2cd4bcbcf619b63010937d3cee1323bffa1a33033e36d7
   languageName: node
   linkType: hard
 
-"@formkit/vue@npm:^1.0.0-beta.15":
-  version: 1.0.0-beta.9-f64c966
-  resolution: "@formkit/vue@npm:1.0.0-beta.9-f64c966"
+"@formkit/vue@npm:^0.16.2":
+  version: 0.16.2
+  resolution: "@formkit/vue@npm:0.16.2"
   dependencies:
-    "@formkit/core": 1.0.0-beta.9-f64c966
-    "@formkit/dev": 1.0.0-beta.9-f64c966
-    "@formkit/i18n": 1.0.0-beta.9-f64c966
-    "@formkit/inputs": 1.0.0-beta.9-f64c966
-    "@formkit/observer": 1.0.0-beta.9-f64c966
-    "@formkit/rules": 1.0.0-beta.9-f64c966
-    "@formkit/themes": 1.0.0-beta.9-f64c966
-    "@formkit/utils": 1.0.0-beta.9-f64c966
-    "@formkit/validation": 1.0.0-beta.9-f64c966
+    "@formkit/core": 0.16.2
+    "@formkit/dev": 0.16.2
+    "@formkit/i18n": 0.16.2
+    "@formkit/inputs": 0.16.2
+    "@formkit/observer": 0.16.2
+    "@formkit/rules": 0.16.2
+    "@formkit/themes": 0.16.2
+    "@formkit/utils": 0.16.2
+    "@formkit/validation": 0.16.2
   peerDependencies:
     vue: ^3.2.1
-  checksum: 328461a9fe784c4bdb16820d9c968d6206e85b0d62debb423304b5aa35ee3a3c4c3d98927f0aa02ac17acfd1fbcaa6328342842e5874a74fae348fb8a24b668f
+  checksum: 632260ca46ac583a12aeeb2ef8d619023b840015f762db569e84fd7cee26d4fef3d9608fba773c6d2e6ad77e2c9f56cdf3012333bbfebed67d672d110b6f922e
   languageName: node
   linkType: hard
 
@@ -431,10 +431,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.15.0":
-  version: 18.15.0
-  resolution: "@types/node@npm:18.15.0"
-  checksum: d81372276dd5053b1743338b61a2178ff9722dc609189d01fc7d1c2acd539414039e0e4780678730514390dad3f29c366a28c29e8dbd5b0025651181f6dd6669
+"@types/node@npm:^18.15.5":
+  version: 18.15.5
+  resolution: "@types/node@npm:18.15.5"
+  checksum: 5fbf3453bd5ce1402bb2964e55d928fc8a8a7de5451b1b0fe66587fecb8a3eb86854ca9cefa5076a5971e2cff00e1773ceeb5d872a54f6c6ddfbbc1064b4e91a
   languageName: node
   linkType: hard
 
@@ -445,13 +445,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-vue@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "@vitejs/plugin-vue@npm:4.0.0"
+"@vitejs/plugin-vue@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "@vitejs/plugin-vue@npm:4.1.0"
   peerDependencies:
     vite: ^4.0.0
     vue: ^3.2.25
-  checksum: 5a53414912db644ca7a663d87c8d4838841dbf794772105c9b3bc3fb10214fc86c2f1f1a47350f264370e9a5fd2475f3b6882778b2440b5085d3fe7550ced542
+  checksum: 532192a3da39f3fd6ba9d4fa9de74533cf6e222785c26bcb75bde9f826c5c4a22ad6f0bb09fae83e3393f9d8d24b6982d547683b1967972a4350e8e76aecf3cb
   languageName: node
   linkType: hard
 
@@ -914,32 +914,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:^0.16.14":
-  version: 0.16.17
-  resolution: "esbuild@npm:0.16.17"
+"esbuild@npm:^0.17.5":
+  version: 0.17.12
+  resolution: "esbuild@npm:0.17.12"
   dependencies:
-    "@esbuild/android-arm": 0.16.17
-    "@esbuild/android-arm64": 0.16.17
-    "@esbuild/android-x64": 0.16.17
-    "@esbuild/darwin-arm64": 0.16.17
-    "@esbuild/darwin-x64": 0.16.17
-    "@esbuild/freebsd-arm64": 0.16.17
-    "@esbuild/freebsd-x64": 0.16.17
-    "@esbuild/linux-arm": 0.16.17
-    "@esbuild/linux-arm64": 0.16.17
-    "@esbuild/linux-ia32": 0.16.17
-    "@esbuild/linux-loong64": 0.16.17
-    "@esbuild/linux-mips64el": 0.16.17
-    "@esbuild/linux-ppc64": 0.16.17
-    "@esbuild/linux-riscv64": 0.16.17
-    "@esbuild/linux-s390x": 0.16.17
-    "@esbuild/linux-x64": 0.16.17
-    "@esbuild/netbsd-x64": 0.16.17
-    "@esbuild/openbsd-x64": 0.16.17
-    "@esbuild/sunos-x64": 0.16.17
-    "@esbuild/win32-arm64": 0.16.17
-    "@esbuild/win32-ia32": 0.16.17
-    "@esbuild/win32-x64": 0.16.17
+    "@esbuild/android-arm": 0.17.12
+    "@esbuild/android-arm64": 0.17.12
+    "@esbuild/android-x64": 0.17.12
+    "@esbuild/darwin-arm64": 0.17.12
+    "@esbuild/darwin-x64": 0.17.12
+    "@esbuild/freebsd-arm64": 0.17.12
+    "@esbuild/freebsd-x64": 0.17.12
+    "@esbuild/linux-arm": 0.17.12
+    "@esbuild/linux-arm64": 0.17.12
+    "@esbuild/linux-ia32": 0.17.12
+    "@esbuild/linux-loong64": 0.17.12
+    "@esbuild/linux-mips64el": 0.17.12
+    "@esbuild/linux-ppc64": 0.17.12
+    "@esbuild/linux-riscv64": 0.17.12
+    "@esbuild/linux-s390x": 0.17.12
+    "@esbuild/linux-x64": 0.17.12
+    "@esbuild/netbsd-x64": 0.17.12
+    "@esbuild/openbsd-x64": 0.17.12
+    "@esbuild/sunos-x64": 0.17.12
+    "@esbuild/win32-arm64": 0.17.12
+    "@esbuild/win32-ia32": 0.17.12
+    "@esbuild/win32-x64": 0.17.12
   dependenciesMeta:
     "@esbuild/android-arm":
       optional: true
@@ -987,7 +987,7 @@ __metadata:
       optional: true
   bin:
     esbuild: bin/esbuild
-  checksum: 4c2cc609ecfb426554bc3f75beb92d89eb2d0c515cfceebaa36c7599d7dcaab7056b70f6d6b51e72b45951ddf9021ee28e356cf205f8e42cc055d522312ea30c
+  checksum: ea6d33eb1bc6c9e00dcee5e253c7e935251b4801d376661fd9f19a9dcffc27f970078a6f7116d6c78ee825ceff9b974594b0b616bd560ce4d875a951aa92977b
   languageName: node
   linkType: hard
 
@@ -1681,9 +1681,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:^3.10.0":
-  version: 3.19.1
-  resolution: "rollup@npm:3.19.1"
+"rollup@npm:^3.18.0":
+  version: 3.20.0
+  resolution: "rollup@npm:3.20.0"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -1691,7 +1691,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: f78198c6de224b26650c70b16db156762d1fcceeb375d34fb2c76fc5b23a78f712c3c881d3248e6f277a511589e20d50c247bcf5c7920f1ddc0a43cadf9f0140
+  checksum: ebf75f48eb81234f8233b4ed145b00841cefba26802d4f069f161247ffba085ca5bb165cc3cd662d9c36cfc135a67660dfff9088d3da2d2c6a70addc15f3233a
   languageName: node
   linkType: hard
 
@@ -1861,11 +1861,11 @@ __metadata:
 
 "typescript@patch:typescript@^4.9.5#~builtin<compat/typescript>":
   version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=ad5954"
+  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 8f6260acc86b56bfdda6004bc53f32ea548f543e8baef7071c8e34d29d292f3e375c8416556c8de10b24deef6933cd1c16a8233dc84a3dd43a13a13265d0faab
+  checksum: ab417a2f398380c90a6cf5a5f74badd17866adf57f1165617d6a551f059c3ba0a3e4da0d147b3ac5681db9ac76a303c5876394b13b3de75fdd5b1eaa06181c9d
   languageName: node
   linkType: hard
 
@@ -1891,7 +1891,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ussd-dashboard@workspace:."
   dependencies:
-    "@formkit/vue": ^1.0.0-beta.15
+    "@formkit/vue": ^0.16.2
     "@fortawesome/fontawesome-svg-core": ^6.3.0
     "@fortawesome/free-regular-svg-icons": ^6.3.0
     "@fortawesome/free-solid-svg-icons": ^6.3.0
@@ -1899,15 +1899,15 @@ __metadata:
     "@nabcellent/sui-vue": ^2.2.7
     "@popperjs/core": ^2.11.6
     "@tanstack/vue-table": ^8.7.9
-    "@types/node": ^18.15.0
-    "@vitejs/plugin-vue": ^4.0.0
+    "@types/node": ^18.15.5
+    "@vitejs/plugin-vue": ^4.1.0
     axios: ^1.3.4
     bootstrap: ^5.2.3
     chart.js: ^4.2.1
     moment: ^2.29.4
     pinia: ^2.0.33
     typescript: ^4.9.5
-    vite: ^4.1.4
+    vite: ^4.2.1
     vue: ^3.2.47
     vue-chartjs: ^5.2.0
     vue-countup-v3: ^1.1.0
@@ -1923,15 +1923,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^4.1.4":
-  version: 4.1.4
-  resolution: "vite@npm:4.1.4"
+"vite@npm:^4.2.1":
+  version: 4.2.1
+  resolution: "vite@npm:4.2.1"
   dependencies:
-    esbuild: ^0.16.14
+    esbuild: ^0.17.5
     fsevents: ~2.3.2
     postcss: ^8.4.21
     resolve: ^1.22.1
-    rollup: ^3.10.0
+    rollup: ^3.18.0
   peerDependencies:
     "@types/node": ">= 14"
     less: "*"
@@ -1957,7 +1957,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 50a9a1f2e29e0ee8fefdec60314d38fb9b746df0bb6ae5a8114014b5bfd95e0fc9b29c0d5e73939361ba53af7eb66c7d20c5656bbe53a783e96540bd3b907c47
+  checksum: 70eb162ffc299017a3c310e3adc95e9661def6b17aafd1f8e5e02e516766060435590dbe3df1e4e95acc3583c728a76e91f07c546221d1e701f1b2b021293f45
   languageName: node
   linkType: hard
 
