@@ -42,24 +42,32 @@
 </template>
 
 <script setup lang="ts">
-import { Line } from 'vue-chartjs'
-import { computed, ref } from "vue";
+import {Line} from 'vue-chartjs'
+import {computed, ref} from "vue";
 import {
-    CategoryScale,
-    Chart,
-    ChartData,
-    ChartOptions,
-    Legend,
-    LinearScale,
-    LineElement,
-    PointElement,
-    Title,
-    Tooltip
+  CategoryScale,
+  Chart,
+  ChartData,
+  ChartOptions,
+  Legend,
+  LinearScale,
+  LineElement,
+  PointElement,
+  Title,
+  Tooltip
 } from 'chart.js'
-import { useDashboardStore } from "@/stores/dashboard";
-import { CardBgCorner, ChartAid, chartSelectOptions, Frequency, Period, Str, Tooltip as TooltipComponent } from "@nabcellent/sui-vue";
-import { faSync } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import {useDashboardStore} from "@/stores/dashboard";
+import {
+  CardBgCorner,
+  ChartAid,
+  chartSelectOptions,
+  Frequency,
+  Period,
+  Str,
+  Tooltip as TooltipComponent
+} from "@nabcellent/sui-vue";
+import {faSync} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import LoadingButton from "@/components/LoadingButton.vue";
 
 const chartTypeOpt = ref<'time-series' | 'cumulative'>('time-series')
@@ -71,7 +79,7 @@ const store = useDashboardStore();
 Chart.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement)
 
 Chart.defaults.color = '#111'
-Chart.defaults.font.weight = '700'
+Chart.defaults.font.weight = 700
 Chart.defaults.font.family = "'Avenir', sans-serif"
 
 const data = computed(() => {
