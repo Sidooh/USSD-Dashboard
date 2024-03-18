@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory } from "vue-router";
-import { defineAsyncComponent } from "vue";
-import { useAuthStore } from "./stores/auth";
+import {createRouter, createWebHistory} from "vue-router";
+import {defineAsyncComponent} from "vue";
+import {useAuthStore} from "./stores/auth";
 
 const Login = () => import("@/pages/auth/Login.vue")
 const Auth = defineAsyncComponent(() => import("@/layouts/Auth.vue"))
@@ -18,6 +18,11 @@ const router = createRouter({
             path: '/sessions', meta: { auth: true }, children: [
                 { path: '', name: 'sessions', component: () => import("./pages/sessions/Index.vue") },
                 { path: ':id', name: 'sessions.show', component: () => import("./pages/sessions/Show.vue") }
+            ]
+        },
+        {
+            path: '/settings', meta: {auth: true}, children: [
+                {path: '', name: 'settings', component: () => import("./pages/settings/Index.vue")},
             ]
         },
 

@@ -1,4 +1,4 @@
-import { Model } from "@nabcellent/sui-vue";
+import {Model} from "@nabcellent/sui-vue";
 
 export type Session = Model & {
     id: string,
@@ -12,4 +12,10 @@ export type Session = Model & {
     updated_at: Date,
     screen_path: {},
     vars: {}
+}
+
+
+export type Setting = Model & {
+    name: string,
+    value: string,
 }
