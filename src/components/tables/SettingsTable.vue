@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import {Session, Setting} from "@/utils/types";
+import {Setting} from "@/utils/types";
 import {CellContext, createColumnHelper} from "@tanstack/vue-table";
 import {DataTable} from "@nabcellent/sui-vue";
 import {h} from "vue";
@@ -17,7 +17,7 @@ import {RouterLink} from "vue-router";
 
 defineProps<{ title?: string, settings: Setting[] }>()
 
-const columnHelper = createColumnHelper<Session>(),
+const columnHelper = createColumnHelper<Setting>(),
     columns = [
       columnHelper.accessor('name', {
         header: 'Name',
