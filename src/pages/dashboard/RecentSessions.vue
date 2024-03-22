@@ -1,14 +1,14 @@
 <template>
-    <SessionsTable title="Recent Sessions" :sessions="store.recentSessions"/>
+    <SessionsTable title="Recent Sessions" :sessions="store.recentSessions" />
 </template>
 
 <script setup lang="ts">
-import { useRouter } from "vue-router";
-import SessionsTable from "@/components/tables/SessionsTable.vue";
-import { useDashboardStore } from "@/stores/dashboard";
+import { useRouter } from 'vue-router';
+import SessionsTable from '@/components/tables/sessions-table/SessionsTable.vue';
+import { useDashboardStore } from '@/stores/dashboard';
 
-const store = useDashboardStore()
-const router = useRouter()
+const store = useDashboardStore();
+const router = useRouter();
 
-await store.fetchRecentSessions()
+await store.fetchRecentSessions();
 </script>

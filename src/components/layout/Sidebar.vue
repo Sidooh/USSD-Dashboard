@@ -1,84 +1,30 @@
 <template>
-    <nav
-        class="navbar navbar-light navbar-vertical navbar-expand-xl"
-        :class="[sideNavStyle, store.isNavbarVerticalCollapsed]"
-    >
-        <div class="d-flex align-items-center">
-            <div class="toggle-icon-wrapper" @click="toggleNav">
-                <button
-                    class="btn navbar-toggler-humburger-icon navbar-vertical-toggle"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="left"
-                    title=""
-                    data-bs-original-title="Toggle Navigation"
-                    aria-label="Toggle Navigation"
-                >
-                    <span class="navbar-toggle-icon"><span class="toggle-line"></span></span>
-                </button>
-            </div>
-            <Logo src="/logo.png" at="navbar-vertical" :width="100" />
-        </div>
-
-        <div
-            class="collapse navbar-collapse"
-            id="navbarVerticalCollapse"
-            @mouseenter="handleMouseEnter"
-            @mouseleave="handleMouseLeave"
-        >
-            <div class="navbar-vertical-content scrollbar">
-                <ul class="navbar-nav flex-column mb-3" id="navbarVerticalNav">
-                    <li v-for="route in routes" class="nav-item">
-                        <div v-if="route.label" class="row navbar-vertical-label-wrapper mt-3 mb-2">
-                            <div class="col-auto navbar-vertical-label">App</div>
-                            <div class="col ps-0">
-                                <hr class="mb-0 navbar-vertical-divider" />
-                            </div>
-                        </div>
-
+    <nav class="pb-12 fixed w-[12.625rem]">
+        <div class="space-y-4 py-4">
+            <template v-for="r in routes" :key="r.label">
+                <div class="px-3 py-2">
+                    <h2 class="mb-2 text-sm tracking-tight text-gray-400">{{ r.label }}</h2>
+                    <div class="space-y-1">
                         <router-link
-                            v-for="child in route.children"
-                            class="nav-link"
+                            v-for="child in r.children"
+                            class="group flex items-center py-2 text-sm font-medium hover:text-gray-500"
                             aria-expanded="false"
                             :to="child.to"
+                            :key="child.name"
                         >
                             <div class="d-flex align-items-center">
-                                <span class="nav-link-icon"><font-awesome-icon :icon="child.icon ?? ''" /></span>
-                                <span class="nav-link-text ps-1">{{ child.name }}</span>
+                                <span class="mr-2 h-4 w-4"><font-awesome-icon :icon="child.icon ?? ''" /></span>
+                                {{ child.name }}
                             </div>
                         </router-link>
-                    </li>
-                </ul>
-            </div>
+                    </div>
+                </div>
+            </template>
         </div>
     </nav>
 </template>
 
 <script setup lang="ts">
-import { useCoreStore } from '@/stores/core';
-import { computed } from 'vue';
-import { faGear, faGroupArrowsRotate, faPieChart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { Logo, RouteType } from '@nabcellent/sui-vue';
 import { routes } from '@/routes';
-
-const store = useCoreStore();
-const toggleNav = () => store.toggleSideNav();
-
-const sideNavStyle = computed(() => (store.navbarStyle !== 'transparent' ? `navbar-${store.navbarStyle}` : ''));
-
-const HTMLClassList = document.getElementsByTagName('html')[0].classList;
-
-let time: number;
-const handleMouseEnter = () => {
-    if (store.isNavbarVerticalCollapsed) {
-        time = window.setTimeout(() => {
-            HTMLClassList.add('navbar-vertical-collapsed-hover');
-        }, 100);
-    }
-};
-
-const handleMouseLeave = () => {
-    clearTimeout(time);
-    HTMLClassList.remove('navbar-vertical-collapsed-hover');
-};
 </script>

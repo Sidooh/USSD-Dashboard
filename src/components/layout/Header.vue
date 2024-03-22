@@ -18,6 +18,10 @@ import { Button } from '@/components/ui/button';
 import Logo from '@/components/common/Logo.vue';
 import MobileNav from '@/components/layout/MobileNav.vue';
 import ModeToggle from '@/components/ModeToggle.vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faX } from '@fortawesome/free-solid-svg-icons';
+import { HamburgerMenuIcon } from '@radix-icons/vue';
 
 const store = useCoreStore();
 
@@ -108,8 +112,8 @@ const handleSignOut = () => {
 
                 <button class="flex items-center space-x-2 md:hidden" @click="showMobileMenu = !showMobileMenu">
                     <Logo />
-                    <FaX v-if="showMobileMenu" />
-                    <GiHamburgerMenu v-else />
+                    <font-awesome-icon :icon="faX" v-if="showMobileMenu" />
+                    <HamburgerMenuIcon v-else />
                 </button>
                 <MobileNav v-show="showMobileMenu" @onClose="showMobileMenu = false" />
             </div>
@@ -162,7 +166,7 @@ const handleSignOut = () => {
                             <template v-else>
                                 <AvatarFallback>
                                     <span class="sr-only">{{ user.name }}</span>
-                                    <FaUser />
+                                    <font-awesome-icon :icon="faUser" />
                                 </AvatarFallback>
                             </template>
                         </Avatar>
