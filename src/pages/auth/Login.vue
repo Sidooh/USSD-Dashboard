@@ -1,77 +1,110 @@
 <script setup lang="ts">
-import { useAuthStore } from "@/stores/auth";
-import router from "../../router";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faUnlockKeyhole } from "@fortawesome/free-solid-svg-icons";
-import { FormKitGroupValue, FormKitNode } from "@formkit/core";
-import { ref } from "vue";
-import { toast, Logo } from "@nabcellent/sui-vue";
+import { useAuthStore } from '@/stores/auth';
+import router from '../../router';
+import { faUnlockKeyhole } from '@fortawesome/free-solid-svg-icons';
+import { ref } from 'vue';
+import { toast } from '@nabcellent/sui-vue';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { CONFIG } from '@/config';
+import SubmitButton from '@/components/common/SubmitButton.vue';
+import { FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
+import { vAutoAnimate } from '@formkit/auto-animate/vue';
+import * as y from 'yup';
+import { toTypedSchema } from '@vee-validate/yup';
+import { useForm } from 'vee-validate';
+import { Input } from '@/components/ui/input';
 
-const isLoading = ref(false)
+const isLoading = ref(false);
 
-const submit = async (data: { email: string, password: string }, node?: FormKitNode | undefined) => {
-    isLoading.value = true
+const formSchema = toTypedSchema(
+    y.object({
+        email: y.string().max(100).required('Email is required.'),
+        password: y.string().max(20).required('Password is required.'),
+    })
+);
+
+const { handleSubmit } = useForm({
+    validationSchema: formSchema,
+    initialValues: {
+        email: '',
+        password: '',
+    },
+});
+
+const submit = handleSubmit(async (values) => {
+    isLoading.value = true;
 
     try {
-        await useAuthStore().authenticate(data.email, data.password)
+        await useAuthStore().authenticate(values.email, values.password);
 
-        const intended = localStorage.getItem('urlIntended')
+        const intended = localStorage.getItem('urlIntended');
 
-        await router.push({ path: intended ?? '/' })
+        await router.push({ path: intended ?? '/' });
 
-        localStorage.removeItem('urlIntended')
+        localStorage.removeItem('urlIntended');
     } catch (err: any) {
-        isLoading.value = false
+        isLoading.value = false;
 
-        toast({ titleText: err.message, icon: 'warning' })
-
-        if (node) node.props.disabled = false
+        toast({ titleText: err.message, icon: 'warning' });
     }
-}
+});
 </script>
 
 <template>
-    <div class="row flex-center min-vh-100 pb-6">
-        <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4 position-relative">
-            <Logo src="/logo.png" :width="120" service-name="USSD"/>
-            <img class="bg-auth-circle-shape" src="/images/icons/spot-illustrations/bg-shape.png" alt="" width="250">
-            <img class="bg-auth-circle-shape-2" src="/images/icons/spot-illustrations/shape-1.png" alt="" width="150">
-            <div class="card">
-                <div class="card-body p-4 p-sm-5">
-                    <div class="row flex-between-center mb-2">
-                        <div class="col-auto">
-                            <h5>Sign In</h5>
+    <form @submit="submit">
+        <Card class="p-5 h-full lg:max-w-3xl lg:min-w-[30rem] relative shadow-xl border-0">
+            <CardHeader>
+                <CardTitle class="text-end text-primary">
+                    Welcome Back
+                    <hr class="mt-3 w-1/2 ms-auto" />
+                </CardTitle>
+            </CardHeader>
+            <CardContent class="space-y-5">
+                <FormField v-slot="{ componentField }" name="email">
+                    <FormItem v-auto-animate>
+                        <FormControl>
+                            <Input type="email" placeholder="Email address" v-bind="componentField" />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                </FormField>
+                <FormField v-slot="{ componentField }" name="password">
+                    <FormItem v-auto-animate>
+                        <FormControl>
+                            <Input type="password" placeholder="Password" v-bind="componentField" />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                </FormField>
+            </CardContent>
+            <CardFooter class="flex-col">
+                <SubmitButton
+                    text="Sign In"
+                    loading-text="Signing in..."
+                    :is-loading="isLoading"
+                    :disabled="isLoading"
+                    :icon="faUnlockKeyhole"
+                    class="w-full"
+                />
+
+                <div class="mt-5">
+                    <div class="relative mt-4">
+                        <hr class="bg-300" />
+                        <div
+                            class="absolute -translate-x-2/4 -translate-y-2/4 bg-card text-[0.8333333333rem] text-[#9da9bb] whitespace-nowrap px-2 left-2/4 top-2/4"
+                        >
+                            🌟
                         </div>
                     </div>
-                    <FormKit id="sign-in" type="form" :actions="false" @submit="submit"
-                             #default="{ value, state: { valid } }">
-                        <FormKit class="form-control" type="email" name="email" placeholder="Email address" autofocus
-                                 autocomplete="email" :config="{classes:{input:'form-control', outer:'mb-3'}}"
-                                 validation="required"/>
-                        <FormKit class="form-control" type="password" name="password" placeholder="Password"
-                                 autoComplete="current-password" validation="required"
-                                 :config="{classes:{input:'form-control', outer:'mb-3'}}"/>
-                        <div class="d-flex justify-content-end">
-                            <a class="fs--1" href="/password/reset">Forgot Password?</a>
+                    <div class="mt-2">
+                        <div class="text-center text-stone-400">
+                            <i>
+                                <small>{{ CONFIG.tagline }}</small>
+                            </i>
                         </div>
-                        <FormKit type="submit" input-class="w-100 btn btn-sm btn-primary mt-3"
-                                 :disabled="!valid || isLoading">
-                            Sign In &nbsp;
-                            <font-awesome-icon :icon="faUnlockKeyhole"/>
-                        </FormKit>
-                    </FormKit>
-                    <div class="position-relative mt-4">
-                        <hr class="bg-300">
-                        <div class="divider-content-center">🌟</div>
-                    </div>
-                    <div class="text-center">
-                        <i>
-                            <small class="opacity-75">Sidooh, Makes You Money with Every Purchase!</small>
-                        </i>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            </CardFooter>
+        </Card>
+    </form>
 </template>
-

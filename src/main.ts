@@ -11,7 +11,7 @@ import { useAuthStore } from './stores/auth';
 import { defaultConfig, plugin } from '@formkit/vue';
 
 import '@/assets/css/index.css';
-import '@nabcellent/sui-vue/dist/style.css';
+// import '@nabcellent/sui-vue/dist/style.css';
 
 //initialize
 createApp(App).use(router).use(createPinia()).use(plugin, defaultConfig()).mount('#app');

@@ -55,7 +55,6 @@ export const CONFIG = {
                 },
             },
         },
-
-        tagline: 'Sidooh, Makes You Money with Every Purchase!',
     },
+    tagline: 'Sidooh, Makes You Money with Every Purchase!',
 };

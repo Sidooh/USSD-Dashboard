@@ -18,25 +18,39 @@ import { toTypedSchema } from '@vee-validate/yup';
 import * as y from 'yup';
 import { useForm } from 'vee-validate';
 import { FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
+import { useSettingsStore } from '@/stores/settings';
+import { ref } from 'vue';
+import { toast } from '@nabcellent/sui-vue';
+import { CheckIcon, ReloadIcon } from '@radix-icons/vue';
 
 const props = defineProps<{
     setting: Setting;
 }>();
+const store = useSettingsStore();
+const isLoading = ref(false);
 
 const formSchema = toTypedSchema(
     y.object({
+        name: y.string().required(),
         value: y.string().required(),
     })
 );
 const form = useForm({
     validationSchema: formSchema,
-    initialValues: {
-        value: props.setting.value,
-    },
+    initialValues: props.setting,
 });
 
-const onSubmit = form.handleSubmit((values) => {
-    console.log('Form submitted!', values);
+const onSubmit = form.handleSubmit(async (values) => {
+    isLoading.value = true;
+
+    try {
+        console.log('Form submitted!', values);
+        await store.setSetting(values.name, values.value);
+        isLoading.value = false;
+    } catch (e) {
+        toast({ titleText: e.message, icon: 'error' });
+        isLoading.value = false;
+    }
 });
 </script>
 
@@ -73,7 +87,13 @@ const onSubmit = form.handleSubmit((values) => {
                         </FormItem>
                     </FormField>
                     <DialogFooter>
-                        <Button type="submit">Save</Button>
+                        <Button type="submit" :disabled="isLoading">
+                            <template v-if="isLoading">Saving...</template>
+                            <template v-else>Save</template>
+
+                            <ReloadIcon v-if="isLoading" class="w-4 h-4 ms-2 animate-spin" />
+                            <span v-else class="ms-2">👍</span>
+                        </Button>
                     </DialogFooter>
                 </form>
             </DialogContent>

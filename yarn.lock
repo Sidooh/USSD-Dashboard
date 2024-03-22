@@ -302,6 +302,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@formkit/auto-animate@npm:^0.8.1":
+  version: 0.8.1
+  resolution: "@formkit/auto-animate@npm:0.8.1"
+  checksum: 10/c35cbfddce7a84b9bda7f85eb2dd272b3d432d9914571876078e001bb2b8ddee0021f24cdabd5d5dd9ad13c090e90fd329ba6e007a08cef642fe4b4b6f446c54
+  languageName: node
+  linkType: hard
+
 "@formkit/core@npm:1.5.9":
   version: 1.5.9
   resolution: "@formkit/core@npm:1.5.9"
@@ -4088,6 +4095,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ussd-dashboard@workspace:."
   dependencies:
+    "@formkit/auto-animate": "npm:^0.8.1"
     "@formkit/vue": "npm:^1.5.9"
     "@fortawesome/fontawesome-svg-core": "npm:^6.5.1"
     "@fortawesome/free-regular-svg-icons": "npm:^6.5.1"
