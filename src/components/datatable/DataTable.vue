@@ -115,7 +115,7 @@ const table = useVueTable({
 </script>
 
 <template>
-    <Card class="rounded-md border-0 p-3 lg:p-6 space-y-3 mx-auto">
+    <Card class="rounded-md border-0 p-3 lg:p-6 space-y-3">
         <CardTitle v-if="title" class="flex items-end flex-col">
             <p class="text-xs lg:text-base lg:px-3">{{ title }}</p>
             <hr class="w-1/2 lg:w-1/5 mt-1" />

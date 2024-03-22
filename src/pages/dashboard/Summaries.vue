@@ -1,39 +1,40 @@
 <template>
-    <div class="g-3 mb-3 h-100 row">
-        <div class="col-md-6 col-xxl-12">
-            <div class="card h-md-100">
-                <card-bg-corner />
-                <div class="card-body position-relative d-flex flex-column justify-content-center">
-                    <h6 class="mb-md-0 mb-lg-2">Sessions</h6>
-                    <h5 class="fw-normal text-700 m-0">
-                        <count-up :end-val="store.summaries?.sessions_count?.total" />
-                    </h5>
-                    <div class="position-absolute top-0 end-0 m-3">
-                        <Badge pill>
-                            <count-up :end-val="store.summaries?.sessions_count?.today" class="h-100" />
-                        </Badge>
-                    </div>
-                </div>
-            </div>
+    <Card class="relative lg:col-span-3 flex items-center">
+        <card-bg-corner
+            class="absolute w-full min-h-full overflow-hidden will-change-[transform,opacity,filter] bg-no-repeat z-0 left-0 top-0 bg-contain bg-right rounded-tr-md rounded-br-md;"
+        />
+        <div class="ps-6 relative space-y-3">
+            <h6>Sessions</h6>
+            <h5 class="fw-normal text-700 m-0">
+                <count-up :end-val="store.summaries?.sessions_count?.total" />
+            </h5>
         </div>
-        <div class="col-md-6 col-xxl-12">
-            <div class="card h-md-100 bg-line-chart-gradient">
-                <card-bg-corner :corner="2" />
-                <div class="card-body position-relative d-flex flex-column justify-content-center">
-                    <h6 class="mb-3">USSD Balance</h6>
-                    <h5 class="fw-normal text-700 m-0">
-                        <count-up :end-val="store.summaries?.ussd_balance" :options="{ prefix: 'KES ' }" />
-                    </h5>
-                </div>
-            </div>
+        <div class="absolute top-0 end-0 m-3">
+            <Badge class="rounded-full">
+                <count-up :end-val="store.summaries?.sessions_count?.today" class="h-100" />
+            </Badge>
         </div>
-    </div>
+    </Card>
+    <Card class="relative lg:col-span-3 flex items-center">
+        <card-bg-corner
+            :corner="2"
+            class="absolute w-full min-h-full overflow-hidden will-change-[transform,opacity,filter] bg-no-repeat z-0 left-0 top-0 bg-contain bg-right rounded-tr-md rounded-br-md;"
+        />
+        <div class="ps-6 relative space-y-3">
+            <h6>USSD Balance</h6>
+            <h5 class="fw-normal text-700 m-0">
+                <count-up :end-val="store.summaries?.ussd_balance" :options="{ prefix: 'KES ' }" />
+            </h5>
+        </div>
+    </Card>
 </template>
 
 <script setup lang="ts">
 import CountUp from 'vue-countup-v3';
 import { useDashboardStore } from '@/stores/dashboard';
-import { Badge, CardBgCorner } from '@nabcellent/sui-vue';
+import { CardBgCorner } from '@nabcellent/sui-vue';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 const store = useDashboardStore();
 

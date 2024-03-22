@@ -1,25 +1,23 @@
 <template>
-    <div class="row g-3">
-        <div class="col-xxl-9">
+    <div class="grid lg:grid-cols-12 gap-3 mb-3">
+        <div class="lg:col-span-9 row-span-2">
             <ComponentLoader>
-                <Chart/>
+                <Chart />
             </ComponentLoader>
         </div>
-        <div class="col">
-            <ComponentLoader>
-                <Statistics/>
-            </ComponentLoader>
-        </div>
+        <ComponentLoader>
+            <Statistics />
+        </ComponentLoader>
     </div>
 
     <ComponentLoader>
-        <RecentSessions/>
+        <RecentSessions />
     </ComponentLoader>
 </template>
 
 <script setup lang="ts">
-import Chart from "@/pages/dashboard/Chart.vue";
-import ComponentLoader from "@/components/loaders/ComponentLoader.vue";
-import RecentSessions from "@/pages/dashboard/RecentSessions.vue";
-import Statistics from "@/pages/dashboard/Summaries.vue";
+import Chart from '@/pages/dashboard/Chart.vue';
+import ComponentLoader from '@/components/loaders/ComponentLoader.vue';
+import RecentSessions from '@/pages/dashboard/RecentSessions.vue';
+import Statistics from '@/pages/dashboard/Summaries.vue';
 </script>

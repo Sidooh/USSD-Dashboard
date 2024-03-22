@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useCoreStore } from '@/stores/core';
-import { ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import { CONFIG } from '@/config';
 import { cn } from '@/lib/utils';
 import {
@@ -80,7 +80,13 @@ const waffleLinks = [
 const showDropShadow = ref(false);
 
 const toggleDropShadow = () => {
-    showDropShadow.value = !showDropShadow.value;
+    const el = document.documentElement;
+
+    if (el.scrollTop > 0) {
+        showDropShadow.value = true;
+    } else {
+        showDropShadow.value = false;
+    }
 };
 
 const showMobileMenu = ref(false);
@@ -94,6 +100,14 @@ const user = {
 const handleSignOut = () => {
     // Implement sign out logic here
 };
+
+onMounted(() => {
+    window.addEventListener('scroll', toggleDropShadow);
+});
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', toggleDropShadow);
+});
 </script>
 
 <template>
@@ -104,8 +118,8 @@ const handleSignOut = () => {
             })
         "
     >
-        <div class="container flex h-16 items-center justify-between py-4">
-            <div class="flex gap-6 md:gap-10">
+        <div class="flex h-16 items-center justify-between md:justify-end py-4">
+            <div class="flex md:hidden gap-6 md:gap-10">
                 <router-link to="/" class="hidden items-center space-x-2 md:flex">
                     <Logo />
                 </router-link>

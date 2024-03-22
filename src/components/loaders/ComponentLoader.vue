@@ -1,6 +1,6 @@
 <template>
     <Suspense>
-        <slot/>
+        <slot />
 
         <template #fallback>
             <div class="wrapper">
@@ -14,9 +14,7 @@
     </Suspense>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style scoped>
 .wrapper {

@@ -1,15 +1,15 @@
 <template>
-    <div class="flex min-h-screen flex-col space-y-6">
-        <!--  Header -->
-        <Header />
-
-        <div class="px-3 lg:px-0 lg:container lg:grid flex-1 gap-12 md:grid-cols-[200px_1fr] pb-6">
+    <div class="flex flex-col">
+        <div class="lg:px-0 lg:container lg:grid flex-1 gap-12 md:grid-cols-[200px_1fr]">
             <!--  Sidebar -->
             <aside class="hidden md:block">
                 <Sidebar v-if="store.navbarPosition === 'vertical' || store.navbarPosition === 'combo'" />
             </aside>
 
-            <main class="min-h-screen relative pb-12">
+            <main class="min-h-screen relative pb-6">
+                <!--  Header -->
+                <Header />
+
                 <!--  Content -->
                 <ComponentLoader>
                     <router-view />
