@@ -1,7 +1,5 @@
-import axios from "axios"
-import { useAuthStore } from "@/stores/auth"
-import router from "../router"
-
+import axios from 'axios';
+import { useAuthStore } from '@/stores/auth';
 
 // axios.interceptors.request.use(
 //     config => {
@@ -11,35 +9,33 @@ import router from "../router"
 //     error => Promise.reject(error)
 // );
 
-
 axios.interceptors.response.use(
-    response => {
+    (response) => {
         if (response.data && response.data.errors) {
-            return Promise.reject(response.data)
+            return Promise.reject(response.data);
         }
-        return response
+        return response;
     },
-    async error => {
+    async (error) => {
         if (error.response) {
             if (error.response.status === 401) {
-                const authStore = useAuthStore()
+                const authStore = useAuthStore();
 
-                authStore.logout()
+                authStore.logout();
             }
         }
 
-        return Promise.reject(error)
+        return Promise.reject(error);
     }
-)
+);
 
-axios.defaults.baseURL = import.meta.env.VITE_ACCOUNTS_API_URL
-axios.defaults.headers.post['Content-Type'] = 'application/json'
+axios.defaults.baseURL = import.meta.env.VITE_ACCOUNTS_API_URL;
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 export const accountsClient = axios.create({
     baseURL: import.meta.env.VITE_ACCOUNTS_API_URL,
-})
+});
 
 export const ussdClient = axios.create({
     baseURL: import.meta.env.VITE_USSD_API_URL,
-})
-
+});

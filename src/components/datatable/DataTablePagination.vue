@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="ts" generic="TData">
 import { Table } from '@tanstack/vue-table';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { ChevronLeftIcon, ChevronRightIcon, DoubleArrowLeftIcon, DoubleArrowRightIcon } from '@radix-icons/vue';

@@ -21,7 +21,7 @@ import { FormControl, FormField, FormItem, FormMessage } from '@/components/ui/f
 import { useSettingsStore } from '@/stores/settings';
 import { ref } from 'vue';
 import { toast } from '@nabcellent/sui-vue';
-import { CheckIcon, ReloadIcon } from '@radix-icons/vue';
+import { ReloadIcon } from '@radix-icons/vue';
 
 const props = defineProps<{
     setting: Setting;
@@ -47,7 +47,7 @@ const onSubmit = form.handleSubmit(async (values) => {
         console.log('Form submitted!', values);
         await store.setSetting(values.name, values.value);
         isLoading.value = false;
-    } catch (e) {
+    } catch (e: any) {
         toast({ titleText: e.message, icon: 'error' });
         isLoading.value = false;
     }

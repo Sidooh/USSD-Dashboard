@@ -23,12 +23,12 @@ defineProps<{
                         >
                             {{ route.label }}
                         </p>
-                        <template v-for="(child, i) in route.children" :key="i">
+                        <template v-for="child in route.children" :key="child">
                             <router-link
                                 :to="child.to"
                                 :class="{
                                     'flex w-full items-center rounded-md p-1': true,
-                                    'cursor-not-allowed opacity-60': child.disabled,
+                                    // 'cursor-not-allowed opacity-60': child.disabled,
                                 }"
                             >
                                 {{ child.name }}

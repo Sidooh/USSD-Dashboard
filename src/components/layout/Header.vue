@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useCoreStore } from '@/stores/core';
 import { onMounted, onUnmounted, ref } from 'vue';
 import { CONFIG } from '@/config';
 import { cn } from '@/lib/utils';
@@ -22,8 +21,6 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faX } from '@fortawesome/free-solid-svg-icons';
 import { HamburgerMenuIcon } from '@radix-icons/vue';
-
-const store = useCoreStore();
 
 const waffleLinks = [
     {
@@ -82,11 +79,7 @@ const showDropShadow = ref(false);
 const toggleDropShadow = () => {
     const el = document.documentElement;
 
-    if (el.scrollTop > 0) {
-        showDropShadow.value = true;
-    } else {
-        showDropShadow.value = false;
-    }
+    showDropShadow.value = el.scrollTop > 0;
 };
 
 const showMobileMenu = ref(false);
@@ -144,24 +137,17 @@ onUnmounted(() => {
                     <PopoverContent class="w-72">
                         <ScrollArea>
                             <div class="grid grid-cols-3 gap-y-3">
-                                <template v-for="(l, i) in links" :key="i">
+                                <template v-for="l in waffleLinks" :key="l">
                                     <a
                                         :href="l.link"
-                                        class="space-y-2 py-2 rounded-lg"
-                                        :class="{ 'hover:bg-primary/10': !l.disabled }"
+                                        class="space-y-2 py-2 rounded-lg hover:bg-primary/10"
                                         target="_blank"
                                         rel="noreferrer"
                                     >
                                         <Avatar class="mx-auto">
                                             <AvatarFallback>{{ l.avatarText }}</AvatarFallback>
                                         </Avatar>
-                                        <p
-                                            class="mb-0 font-medium text-truncate text-xs text-center"
-                                            :class="{
-                                                'text-gray-800': !l.disabled,
-                                                'text-gray-400': l.disabled,
-                                            }"
-                                        >
+                                        <p class="mb-0 font-medium text-truncate text-xs text-center text-gray-800">
                                             {{ l.title }}
                                         </p>
                                     </a>

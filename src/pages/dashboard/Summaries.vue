@@ -33,7 +33,7 @@
 import CountUp from 'vue-countup-v3';
 import { useDashboardStore } from '@/stores/dashboard';
 import { CardBgCorner } from '@nabcellent/sui-vue';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 const store = useDashboardStore();

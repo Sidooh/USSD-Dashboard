@@ -39,7 +39,7 @@ const router = createRouter({
     ],
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _, next) => {
     const { token } = useAuthStore();
 
     if (!token && to.meta.auth) {

@@ -1,5 +1,5 @@
-<script setup lang="ts">
-import type { ColumnDef, ColumnFiltersState, FilterFn, SortingState, VisibilityState } from '@tanstack/vue-table';
+<script setup lang="ts" generic="TData, TValue">
+import type { ColumnDef, ColumnFiltersState, FilterFn, Row, SortingState, VisibilityState } from '@tanstack/vue-table';
 import {
     FlexRender,
     getCoreRowModel,
@@ -9,6 +9,7 @@ import {
     getPaginationRowModel,
     getSortedRowModel,
     useVueTable,
+    type Table as BaseTable,
 } from '@tanstack/vue-table';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Card, CardTitle } from '@/components/ui/card';
@@ -53,14 +54,14 @@ const table = useVueTable({
         return [
             {
                 id: 'select',
-                header: ({ table }) =>
+                header: ({ table }: { table: BaseTable<TData> }) =>
                     h(Checkbox, {
                         class: 'border-0 hover:border hover:border-gray-200',
                         checked: table.getIsAllPageRowsSelected(),
                         'onUpdate:checked': (value: boolean) => table.toggleAllPageRowsSelected(!!value),
                         ariaLabel: 'Select all',
                     }),
-                cell: ({ row }) =>
+                cell: ({ row }: { row: Row<TData> }) =>
                     h(Checkbox, {
                         class: 'border-0 hover:border hover:border-gray-200',
                         checked: row.getIsSelected(),
