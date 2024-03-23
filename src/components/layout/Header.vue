@@ -140,7 +140,7 @@ onUnmounted(() => {
                                 <template v-for="l in waffleLinks" :key="l">
                                     <a
                                         :href="l.link"
-                                        class="space-y-2 py-2 rounded-lg hover:bg-primary/10"
+                                        class="space-y-2 py-2 rounded-lg hover:bg-primary/10 text-center"
                                         target="_blank"
                                         rel="noreferrer"
                                     >
