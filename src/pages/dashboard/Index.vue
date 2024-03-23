@@ -1,16 +1,16 @@
 <template>
     <div class="grid lg:grid-cols-12 gap-3 mb-3">
         <div class="lg:col-span-9 row-span-2">
-            <ComponentLoader>
+            <ComponentLoader class="lg:h-72 w-full">
                 <Chart />
             </ComponentLoader>
         </div>
-        <ComponentLoader>
+        <ComponentLoader class="lg:h-72 lg:col-span-3">
             <Statistics />
         </ComponentLoader>
     </div>
 
-    <ComponentLoader>
+    <ComponentLoader class="lg:h-96 w-full">
         <RecentSessions />
     </ComponentLoader>
 </template>

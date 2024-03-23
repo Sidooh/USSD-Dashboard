@@ -1,15 +1,10 @@
 <template>
-    <SessionsTable title="Sessions" :sessions="sessions" />
+    <ComponentLoader class="lg:h-[40rem] w-full">
+        <SessionsTable />
+    </ComponentLoader>
 </template>
 
 <script setup lang="ts">
-import { useSessionsStore } from '@/stores/sessions';
-import { computed, onMounted } from 'vue';
-import SessionsTable from '@/components/tables/sessions-table/SessionsTable.vue';
-
-const store = useSessionsStore();
-
-const sessions = computed(() => store.sessions);
-
-onMounted(() => store.fetchSessions());
+import ComponentLoader from '@/components/loaders/ComponentLoader.vue';
+import SessionsTable from '@/pages/sessions/components/SessionsTable.vue';
 </script>

@@ -3,24 +3,13 @@
         <slot />
 
         <template #fallback>
-            <div class="wrapper">
-                <div style="position: relative">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                </div>
-            </div>
+            <Skeleton :class="$attrs.class" />
         </template>
     </Suspense>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Skeleton } from '@/components/ui/skeleton';
 
-<style scoped>
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 20vh;
-}
-</style>
+defineProps<{ classes?: string }>();
+</script>
