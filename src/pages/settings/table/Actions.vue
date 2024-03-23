@@ -28,6 +28,7 @@ const props = defineProps<{
 }>();
 const store = useSettingsStore();
 const isLoading = ref(false);
+const openDialog = ref(false);
 
 const formSchema = toTypedSchema(
     y.object({
@@ -44,11 +45,15 @@ const onSubmit = form.handleSubmit(async (values) => {
     isLoading.value = true;
 
     try {
-        console.log('Form submitted!', values);
         await store.setSetting(values.name, values.value);
+
+        toast({ titleText: 'Setting Updated Successfully!' });
+
         isLoading.value = false;
+        openDialog.value = false;
     } catch (e: any) {
         toast({ titleText: e.message, icon: 'error' });
+
         isLoading.value = false;
     }
 });
@@ -56,7 +61,7 @@ const onSubmit = form.handleSubmit(async (values) => {
 
 <template>
     <div class="flex items-center gap-2">
-        <Dialog>
+        <Dialog :open="openDialog" @update:open="(val) => (openDialog = val)">
             <DialogTrigger>
                 <Tooltip as-child>
                     <template v-slot:title>Edit {{ setting.name }}</template>
