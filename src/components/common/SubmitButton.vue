@@ -26,8 +26,6 @@ const props = defineProps<{
     icon: Component;
 }>();
 
-console.log(props.icon);
-
 const buttonRef = ref(null);
 const loadingText = ref(props.loadingText ?? 'Loading...');
 </script>

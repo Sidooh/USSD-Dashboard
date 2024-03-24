@@ -19,6 +19,9 @@ export const CONFIG = {
                 },
             },
             merchants: {
+                api: {
+                    url: import.meta.env.VITE_MERCHANTS_API_URL,
+                },
                 dashboard: {
                     url: import.meta.env.VITE_MERCHANTS_DASHBOARD_URL,
                 },

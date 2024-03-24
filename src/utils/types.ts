@@ -20,6 +20,21 @@ export type Setting = Model & {
     value: string;
 };
 
+export type Merchant = Model & {
+    account_id: number;
+    float_account_id: number;
+    location_id: number;
+
+    first_name: string;
+    last_name: string;
+    id_number: string;
+    phone: string;
+
+    business_name: string;
+    code: string;
+    land_mark: string;
+};
+
 export type FacetedFilterType = {
     column_id: string;
     title: string;
