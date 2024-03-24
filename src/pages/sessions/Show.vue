@@ -1,99 +1,83 @@
 <script setup lang="ts">
-import { useSessionsStore } from "@/stores/sessions"
-import { computed, onMounted, watch } from "vue"
+import { useSessionsStore } from '@/stores/sessions';
+import { computed, onMounted, watch } from 'vue';
 
-import { useRoute } from "vue-router";
+import { useRoute } from 'vue-router';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
 const store = useSessionsStore();
 
-const session = computed(() => store.session)
+const session = computed(() => store.session);
 
 const sessionDetails = computed(() => {
     return {
         ...session.value,
         screen_path: undefined,
-        vars: undefined
-    }
-})
+        vars: undefined,
+    };
+});
 
 const screens = computed(() => {
-    const screens = []
-    let screen: any = session.value.screen_path
+    const screens = [];
+    let screen: any = session.value.screen_path;
 
     while (screen) {
-        screen.formatted = `<p class="text-primary">${screen.title}</p>`
+        screen.formatted = `<p class="text-sm text-primary font-bold mb-3">${screen.title}</p>`;
         if (screen.options) {
             for (const option in screen.options) {
-                screen.formatted += `<h5 class="fs--1 text-secondary">${screen.options[option].value}. ${screen.options[option].label}</h5>`
+                screen.formatted += `<h5 class="text-sm text-primary/70">${screen.options[option].value}. ${screen.options[option].label}</h5>`;
             }
         }
-        screens.push({ ...screen, previous: undefined })
-        screen = screen.previous
+        screens.push({ ...screen, previous: undefined });
+        screen = screen.previous;
     }
 
-    return screens.reverse()
-})
+    return screens.reverse();
+});
 
-const route = useRoute()
-watch(() => route.params.id, newId => {
-    store.setSessionFromId(`${newId}`)
-})
+const route = useRoute();
+watch(
+    () => route.params.id,
+    (newId) => {
+        store.setSessionFromId(`${newId}`);
+    }
+);
 
 onMounted(() => {
-    store.setSessionFromId(`${route.params.id}`)
-})
+    store.setSessionFromId(`${route.params.id}`);
+});
 </script>
 
 <template>
-    <div class="row g-0">
-        <div class="col-lg-6 mb-3 pe-lg-2 mb-3">
-            <div class="card h-lg-100">
-                <div class="card-body d-flex">
-                    <div class="row h-100 justify-content-between g-0">
-                        <h5 class="mt-1 fw-bold">Session Details</h5>
-                        <div class="fs--2 mt-3">
-                            <div class="d-flex flex-between-center mb-1" v-for="(session, index) in sessionDetails">
-                                <div class="d-flex align-items-center">
-                                    <span class="dot bg-primary"></span>
-                                    <span class="fw-semi-bold">{{ index }}</span>
-                                </div>
-                                <div class="text-secondary">{{ session }}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 mb-3 ps-lg-2">
-            <div class="card h-lg-100">
-                <div class="card-body d-flex">
-                    <div class="row h-100 justify-content-between g-0">
-                        <h5 class="mt-1 fw-bold">Session Vars</h5>
-                        <div class="fs--2 mt-3">
-                            <div class="d-flex flex-between-center mb-1" v-for="(vars, index) in session.vars">
-                                <div class="d-flex align-items-center">
-                                    <span class="dot bg-primary"></span>
-                                    <span class="fw-semi-bold">{{ index }}</span>
-                                </div>
-                                <div class="text-secondary">{{ vars }}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 mb-6">
+        <Card>
+            <CardHeader>Session Details</CardHeader>
+            <CardContent>
+                <ul class="leaders">
+                    <li class="text-sm" v-for="(session, index) in sessionDetails" :key="index">
+                        <span class="text-primary font-bold">{{ index }}</span>
+                        <span class="text-primary/70">{{ session }}</span>
+                    </li>
+                </ul>
+            </CardContent>
+        </Card>
+        <Card>
+            <CardHeader>Session Vars</CardHeader>
+            <CardContent>
+                <ul class="leaders">
+                    <li class="text-sm" v-for="(vars, index) in session.vars" :key="index">
+                        <span class="text-primary font-bold">{{ index }}</span>
+                        <span class="text-primary/70">{{ vars }}</span>
+                    </li>
+                </ul>
+            </CardContent>
+        </Card>
     </div>
 
-    <div class="row g-3">
-        <div class="col-m-6 col-lg-3" v-for="screen in screens">
-            <div class="card h-lg-100">
-                <div class="card-body d-flex align-items-center">
-                    <div class="row h-100 justify-content-between g-0">
-                        <span v-if="screen" v-html="screen.formatted"></span>
-                        <span v-else>No session found</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="grid grid-cols-4 gap-3">
+        <Card class="p-6" v-for="screen in screens" :key="screen">
+            <span v-if="screen" v-html="screen.formatted"></span>
+            <span v-else>No session found</span>
+        </Card>
     </div>
 </template>
