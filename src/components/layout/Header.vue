@@ -122,7 +122,7 @@ onUnmounted(() => {
                     <font-awesome-icon :icon="faX" v-if="showMobileMenu" />
                     <HamburgerMenuIcon v-else />
                 </button>
-                <MobileNav v-show="showMobileMenu" @onClose="showMobileMenu = false" />
+                <MobileNav v-show="showMobileMenu" :on-close="() => (showMobileMenu = false)" />
             </div>
 
             <div class="flex items-center space-x-2">
