@@ -19,7 +19,7 @@ const goToPage = (e: Event) => {
 </script>
 
 <template>
-    <div class="flex items-center justify-between px-2 overflow-x-auto gap-3 text-nowrap text-xs md:text-sm">
+    <div class="relative flex items-center justify-between px-2 overflow-x-auto gap-3 text-nowrap text-xs md:text-sm">
         <div class="flex items-center flex-1 text-muted-foreground divide-x divide-dashed space-x-2">
             <div class="flex items-center justify-center font-medium">
                 Page {{ table.getState().pagination.pageIndex + 1 }} of {{ table.getPageCount() }}

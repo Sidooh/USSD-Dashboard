@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col">
-        <div class="lg:px-0 lg:container lg:grid flex-1 gap-12 md:grid-cols-[200px_1fr]">
+        <div class="px-3 lg:px-0 lg:container">
             <!--  Sidebar -->
             <aside class="hidden md:block">
                 <Sidebar v-if="store.navbarPosition === 'vertical' || store.navbarPosition === 'combo'" />

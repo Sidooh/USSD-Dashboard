@@ -74,7 +74,7 @@ onMounted(() => {
         </Card>
     </div>
 
-    <div class="grid grid-cols-4 gap-3">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-3">
         <Card class="p-6" v-for="screen in screens" :key="screen">
             <span v-if="screen" v-html="screen.formatted"></span>
             <span v-else>No session found</span>
