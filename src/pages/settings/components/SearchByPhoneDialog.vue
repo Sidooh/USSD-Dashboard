@@ -42,7 +42,7 @@ const formSchema = toTypedSchema(
 );
 const form = useForm({
     validationSchema: formSchema,
-    initialValues: { phone: '254110039317' },
+    initialValues: { phone: '' },
 });
 
 const onSubmit = form.handleSubmit(async (values) => {
