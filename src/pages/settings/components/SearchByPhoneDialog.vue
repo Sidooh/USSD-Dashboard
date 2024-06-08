@@ -128,11 +128,11 @@ const handleWhitelisting = async () => {
                 <DialogHeader>
                     <DialogTitle>Confirm Merchant Details</DialogTitle>
                     <DialogDescription
-                        >Are you sure you wish to whitelist user with the following account ID?
+                        >Are you sure you wish to whitelist the following merchant?
                     </DialogDescription>
                 </DialogHeader>
 
-                <ul class="leaders text-sm text-red-700 font-bold w-5/6 md:mx-auto">
+                <ul class="leaders text-sm text-red-700 font-bold w-full overflow-hidden">
                     <li>
                         <span class="!bg-background">Account ID</span>
                         <span class="!bg-background">{{ account.id }}</span>
