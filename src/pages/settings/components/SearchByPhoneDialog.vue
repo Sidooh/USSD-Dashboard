@@ -54,9 +54,7 @@ const onSubmit = form.handleSubmit(async (values) => {
         if (!account.value) throw new Error('Account not found');
 
         if (props.setting.value.split(',').includes(String(account.value?.id)))
-            throw new Error('Account already whitelisted');
-
-        // merchant.value = await merchantsStore.findByAccount(account.id);
+            throw new Error('Account already whitelisted.');
 
         isLoading.value = false;
     } catch (e: any) {

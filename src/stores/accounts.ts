@@ -31,6 +31,8 @@ export const useAccountsStore = defineStore('accounts', {
                         throw new Error(err.response?.data.errors.message);
                     } else if (err.response?.status === 401 && err.response.data) {
                         useAuthStore().logout();
+                    } else if (err.response?.status === 404) {
+                        throw new Error('Not found!');
                     } else if (err.response?.status === 429) {
                         throw new Error('Sorry! We failed to sign you in. Please try again in a few minutes.');
                     } else if (err.code === 'ERR_NETWORK') {
